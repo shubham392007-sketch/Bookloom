@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Profile - BookLoom</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#6c3a00",
+                    "tertiary-fixed": "#ffdcc1",
+                    "on-primary-fixed-variant": "#2b38aa",
+                    "surface-variant": "#e2e3e0",
+                    "surface-container": "#eeeeeb",
+                    "surface-tint": "#4552c3",
+                    "on-primary-container": "#faf7ff",
+                    "primary-fixed-dim": "#bdc2ff",
+                    "tertiary": "#874a00",
+                    "outline-variant": "#c6c5d5",
+                    "primary": "#404dbe",
+                    "background": "#f9f9f6",
+                    "on-error": "#ffffff",
+                    "tertiary-container": "#aa5f00",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f4f4f1",
+                    "secondary-fixed-dim": "#cfc5b7",
+                    "on-tertiary-fixed": "#2e1500",
+                    "inverse-primary": "#bdc2ff",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#e2e3e0",
+                    "surface-bright": "#f9f9f6",
+                    "primary-container": "#5a67d8",
+                    "primary-fixed": "#dfe0ff",
+                    "inverse-on-surface": "#f1f1ee",
+                    "outline": "#767684",
+                    "on-surface-variant": "#454653",
+                    "on-secondary-fixed-variant": "#4c463b",
+                    "on-surface": "#1a1c1b",
+                    "on-secondary-fixed": "#201b12",
+                    "on-tertiary-container": "#fff6f2",
+                    "surface-dim": "#dadad7",
+                    "on-primary-fixed": "#000965",
+                    "inverse-surface": "#2f312f",
+                    "tertiary-fixed-dim": "#ffb778",
+                    "on-secondary-container": "#6b6358",
+                    "surface": "#f9f9f6",
+                    "secondary-container": "#ece1d2",
+                    "secondary": "#655d52",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1a1c1b",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#ece1d2",
+                    "surface-container-high": "#e8e8e5",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scale-95-on-click:active { transform: scale(0.95); }
+        .scale-98-on-click:active { transform: scale(0.98); }
+        .ease-out-quint { transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body text-on-surface antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-surface/80 backdrop-blur-xl transition-colors duration-300">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant scale-98-on-click ease-out-quint">menu</button>
+<h1 class="font-headline font-bold tracking-tight text-xl text-indigo-700 italic">BookLoom</h1>
+</div>
+<div class="h-10 w-10 rounded-full overflow-hidden border-2 border-primary/10">
+<img alt="Profile Avatar" class="h-full w-full object-cover" data-alt="professional portrait of a smiling woman with a soft blurred urban background and natural warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAgnzZjzbnQdrt9ZIsct_yZA2c183sgGj_NTNBRIfC9c_JWNZaWW5S14y9nA31W-8xN6Qa6A-gYoau07Pq0YfQcdvhibnOruaYzRU4yP5qj1MgO8Rq6-G7L5n2cdrvGdzqfPNkiQI8TpsCk4YizVtvr3WnZCm4UctGDh8m_g_Q7DXJoctC-XE3d-qafFFHnax13f-bA1rrGvUCmPcE0zWuAOjbM1IUr16zw6swzMtwwHVXUf9WZf5JtwVhQ2l9mXFKc2591f7RMUyx"/>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-md mx-auto">
+<!-- Hero Profile Section -->
+<section class="flex flex-col items-center text-center mb-12">
+<div class="relative mb-6">
+<div class="h-28 w-28 rounded-full overflow-hidden shadow-2xl ring-4 ring-surface-container-lowest">
+<img alt="Large Profile Avatar" class="h-full w-full object-cover" data-alt="close up headshot of a friendly professional woman with soft studio lighting and clean background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtCI4puwox2YdNMp-2gU6wWCHYQAusHMStGDV3GOsLZ2jiznujYJj_r1JUk0vxkLr8QQd8GJQiJqig6X2IZfJPZv1ff7EOOWM7z_dpFBQ3nuVhjTub33uFHKHkwexAP65dty1aAwaIwTHuOz9x1DUHZqP_KEZ5ePsTHJQNM5ull1HiIHrcIRZTNx9TRVKzyL2VUZci3HnVY9h-Q2u5ENNkLjoZ2WZApvINb1PvwBkD6469nJnzjzCFZzSt_5islq6vHY47mstFDuoB"/>
+</div>
+<div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-tertiary-container text-on-tertiary-container px-4 py-1 rounded-full text-[10px] font-headline font-extrabold tracking-widest uppercase shadow-sm">
+                    Gold Member
+                </div>
+</div>
+<h2 class="text-display-md font-headline font-bold tracking-tight mb-1">Alexandra Weaver</h2>
+<p class="text-on-surface-variant text-sm font-medium">alexandra.w@design.com</p>
+</section>
+<!-- Stats Bento Grid (Visual Interest) -->
+<div class="grid grid-cols-2 gap-4 mb-10">
+<div class="bg-surface-container-lowest p-5 rounded-xl flex flex-col items-center justify-center">
+<span class="text-primary font-headline font-bold text-2xl">42</span>
+<span class="text-on-surface-variant text-[11px] uppercase tracking-widest font-medium">Books Read</span>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl flex flex-col items-center justify-center">
+<span class="text-primary font-headline font-bold text-2xl">12</span>
+<span class="text-on-surface-variant text-[11px] uppercase tracking-widest font-medium">In Wishlist</span>
+</div>
+</div>
+<!-- Navigation List -->
+<nav class="space-y-2">
+<a class="group flex items-center justify-between p-4 bg-surface-container-lowest rounded-2xl hover:bg-indigo-50/30 transition-all ease-out-quint scale-98-on-click" href="#">
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 rounded-xl bg-surface-container-low flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">shopping_bag</span>
+</div>
+<div>
+<p class="font-headline font-semibold text-on-surface">Orders</p>
+<p class="text-xs text-on-surface-variant">Track and manage your purchases</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</a>
+<a class="group flex items-center justify-between p-4 bg-surface-container-lowest rounded-2xl hover:bg-indigo-50/30 transition-all ease-out-quint scale-98-on-click" href="#">
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 rounded-xl bg-surface-container-low flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+<div>
+<p class="font-headline font-semibold text-on-surface">Wishlist</p>
+<p class="text-xs text-on-surface-variant">Your curated collection of future reads</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</a>
+<a class="group flex items-center justify-between p-4 bg-surface-container-lowest rounded-2xl hover:bg-indigo-50/30 transition-all ease-out-quint scale-98-on-click" href="#">
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 rounded-xl bg-surface-container-low flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</div>
+<div>
+<p class="font-headline font-semibold text-on-surface">Settings</p>
+<p class="text-xs text-on-surface-variant">Privacy, notifications, and account</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</a>
+<a class="group flex items-center justify-between p-4 bg-surface-container-lowest rounded-2xl hover:bg-indigo-50/30 transition-all ease-out-quint scale-98-on-click" href="#">
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 rounded-xl bg-surface-container-low flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">help_center</span>
+</div>
+<div>
+<p class="font-headline font-semibold text-on-surface">Help Center</p>
+<p class="text-xs text-on-surface-variant">FAQs and 24/7 customer support</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</a>
+</nav>
+<!-- Log Out -->
+<div class="mt-12 flex justify-center">
+<button class="flex items-center gap-2 px-8 py-3 rounded-full border border-outline-variant/30 text-error font-headline font-semibold text-sm hover:bg-error/5 transition-all scale-98-on-click">
+<span class="material-symbols-outlined text-sm">logout</span>
+                Sign Out
+            </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-8 bg-surface/80 backdrop-blur-xl rounded-t-3xl shadow-[0_-10px_40px_rgba(26,28,27,0.05)]">
+<a class="flex flex-col items-center justify-center text-slate-400 hover:text-indigo-500 transition-all scale-95-on-click cubic-bezier(0.23,1,0.32,1)" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-manrope font-medium text-[11px] uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 hover:text-indigo-500 transition-all scale-95-on-click cubic-bezier(0.23,1,0.32,1)" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-manrope font-medium text-[11px] uppercase tracking-widest mt-1">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 hover:text-indigo-500 transition-all scale-95-on-click cubic-bezier(0.23,1,0.32,1)" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-manrope font-medium text-[11px] uppercase tracking-widest mt-1">Wishlist</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 hover:text-indigo-500 transition-all scale-95-on-click cubic-bezier(0.23,1,0.32,1)" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-manrope font-medium text-[11px] uppercase tracking-widest mt-1">Cart</span>
+</a>
+<!-- Active Tab: Profile -->
+<a class="flex flex-col items-center justify-center text-indigo-700 bg-indigo-50/50 rounded-xl px-3 py-1 scale-95-on-click cubic-bezier(0.23,1,0.32,1)" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-manrope font-medium text-[11px] uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BookLoom - Book Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#6c3a00",
+                    "tertiary-fixed": "#ffdcc1",
+                    "on-primary-fixed-variant": "#2b38aa",
+                    "surface-variant": "#e2e3e0",
+                    "surface-container": "#eeeeeb",
+                    "surface-tint": "#4552c3",
+                    "on-primary-container": "#faf7ff",
+                    "primary-fixed-dim": "#bdc2ff",
+                    "tertiary": "#874a00",
+                    "outline-variant": "#c6c5d5",
+                    "primary": "#404dbe",
+                    "background": "#f9f9f6",
+                    "on-error": "#ffffff",
+                    "tertiary-container": "#aa5f00",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f4f4f1",
+                    "secondary-fixed-dim": "#cfc5b7",
+                    "on-tertiary-fixed": "#2e1500",
+                    "inverse-primary": "#bdc2ff",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#e2e3e0",
+                    "surface-bright": "#f9f9f6",
+                    "primary-container": "#5a67d8",
+                    "primary-fixed": "#dfe0ff",
+                    "inverse-on-surface": "#f1f1ee",
+                    "outline": "#767684",
+                    "on-surface-variant": "#454653",
+                    "on-secondary-fixed-variant": "#4c463b",
+                    "on-surface": "#1a1c1b",
+                    "on-secondary-fixed": "#201b12",
+                    "on-tertiary-container": "#fff6f2",
+                    "surface-dim": "#dadad7",
+                    "on-primary-fixed": "#000965",
+                    "inverse-surface": "#2f312f",
+                    "tertiary-fixed-dim": "#ffb778",
+                    "on-secondary-container": "#6b6358",
+                    "surface": "#f9f9f6",
+                    "secondary-container": "#ece1d2",
+                    "secondary": "#655d52",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1a1c1b",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#ece1d2",
+                    "surface-container-high": "#e8e8e5",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scale-98-on-click:active { transform: scale(0.98); }
+        .scale-95-on-click:active { transform: scale(0.95); }
+        .ease-out-quint { transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); }
+        ::-webkit-scrollbar { display: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-surface/80 dark:bg-slate-900/80 backdrop-blur-xl transition-all duration-300">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined p-2 rounded-full hover:bg-slate-100/50 transition-colors scale-98-on-click">arrow_back</button>
+<h1 class="text-indigo-700 font-headline font-bold tracking-tighter text-xl italic">BookLoom</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="material-symbols-outlined p-2 rounded-full hover:bg-slate-100/50 transition-colors scale-98-on-click" data-icon="favorite">favorite</button>
+<button class="material-symbols-outlined p-2 rounded-full hover:bg-slate-100/50 transition-colors scale-98-on-click" data-icon="share">share</button>
+</div>
+</header>
+<main class="pt-20 pb-32">
+<!-- Hero Section: Book Cover -->
+<section class="px-6 mb-12 flex justify-center">
+<div class="relative w-full max-w-[320px] aspect-[2/3] group">
+<div class="absolute inset-0 bg-indigo-900/10 rounded-[2rem] blur-2xl transform translate-y-6 scale-90"></div>
+<img alt="The Midnight Library book cover" class="w-full h-full object-cover rounded-[2rem] shadow-xl relative z-10 transition-transform duration-700 ease-out-quint group-hover:scale-[1.02]" data-alt="Stunning book cover of a modern novel with deep blue and gold celestial patterns, placed in a soft studio lighting setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmSlLAJSAAgS-Laki1PNfleBdwCYQkVdvtDxFa18YdQcjMCHGl0PhwUINrS_8B2bFys329QJaqK9EuVMpIOl7rECAK9Wnmi8GcSFB5AkU3AvdPWQ9O399Nc2HIhBHG_CGhtpMv8BSSjbBIalBO7wQWcWboabZRoTpG31sgK0xF3H_oVhYZ00qFoAAH5S1ERD2WxZrxL0cDKTOfaFf-sF5Gyjmlr4ExXs9iYfA4As0vb7xboUJeabAglufAscQEccOFR-4mK-e446_p"/>
+</div>
+</section>
+<!-- Book Identity -->
+<section class="px-6 text-center space-y-3 mb-10">
+<h2 class="font-headline font-extrabold text-display-md tracking-tight text-on-surface">The Midnight Library</h2>
+<p class="font-body text-primary font-semibold text-lg tracking-wide">Matt Haig</p>
+<div class="flex items-center justify-center gap-4 py-2">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-amber-500 text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-on-surface">4.8</span>
+<span class="text-on-surface-variant text-sm">(24k reviews)</span>
+</div>
+<div class="w-1.5 h-1.5 rounded-full bg-outline-variant"></div>
+<p class="font-headline font-bold text-xl text-on-surface">$24.99</p>
+</div>
+</section>
+<!-- CTA Buttons -->
+<section class="px-6 grid grid-cols-2 gap-4 mb-12">
+<button class="bg-primary hover:bg-primary-container text-on-primary py-4 rounded-full font-headline font-bold tracking-wide scale-98-on-click ease-out-quint duration-300">
+                Add to Cart
+            </button>
+<button class="bg-secondary-container hover:bg-surface-container-high text-on-secondary-container py-4 rounded-full font-headline font-bold tracking-wide scale-98-on-click ease-out-quint duration-300">
+                Buy Now
+            </button>
+</section>
+<!-- Tabbed Section -->
+<section class="px-6">
+<div class="flex justify-between border-b-0 mb-8 overflow-x-auto whitespace-nowrap">
+<button class="pb-3 border-b-2 border-primary text-primary font-headline font-bold text-sm tracking-widest uppercase">Description</button>
+<button class="pb-3 border-b-2 border-transparent text-on-surface-variant font-headline font-medium text-sm tracking-widest uppercase">Reviews</button>
+<button class="pb-3 border-b-2 border-transparent text-on-surface-variant font-headline font-medium text-sm tracking-widest uppercase">Details</button>
+</div>
+<div class="space-y-6 text-on-surface-variant leading-relaxed font-body">
+<p>Between life and death there is a library, and within that library, the shelves go on forever. Every book provides a chance to try another life you could have lived. To see how things would be if you had made other choices...</p>
+<p>Nora Seed finds herself faced with this decision. Faced with the possibility of changing her life for a new one, following a different career, undoing old breakups, realizing her dreams of becoming a glaciologist.</p>
+</div>
+</section>
+<!-- Similar Books (Editorial Layout) -->
+<section class="mt-16">
+<div class="px-6 flex justify-between items-end mb-8">
+<h3 class="font-headline font-extrabold text-2xl tracking-tight">Similar Books</h3>
+<span class="text-primary font-semibold text-sm cursor-pointer hover:underline">View All</span>
+</div>
+<div class="flex gap-6 overflow-x-auto px-6 pb-8 snap-x no-scrollbar">
+<!-- Book Card 1 -->
+<div class="flex-none w-48 snap-start">
+<div class="bg-surface-container-lowest rounded-xl p-0 mb-4 transition-transform duration-500 hover:scale-105">
+<img alt="Similar book 1" class="w-full h-64 object-cover rounded-xl shadow-sm" data-alt="Artistic cover of a fiction novel with pastel abstract colors on a clean white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuFXXXFHopEQGuWwn7wwZCzgcqy0MDYAymlpAo-3_YYqDSjnlob2NN1svk3BIY-fgzumc_F2tAHUlMOg8rza1IPbafgPP1cdlzfCIL-U-x4NM-X8zBhgZ4k_4fG5AU73siCpjPr8ctmnOWRuAedCHvz_E9fqrd05jbBmK_jJ_sIv50odNe2pN5Vu47EyUsOXqWspyrklKiT7CwdxagIwXJGJG_yyIninzwBTebacFUDifQdRUB1nf4jC6fjzsZ3ag3hkaBJgB2280c"/>
+</div>
+<p class="font-headline font-bold text-on-surface line-clamp-1">The Alchemist</p>
+<p class="text-sm text-on-surface-variant">Paulo Coelho</p>
+<p class="text-primary font-bold mt-1">$18.00</p>
+</div>
+<!-- Book Card 2 -->
+<div class="flex-none w-48 snap-start">
+<div class="bg-surface-container-lowest rounded-xl p-0 mb-4 transition-transform duration-500 hover:scale-105">
+<img alt="Similar book 2" class="w-full h-64 object-cover rounded-xl shadow-sm" data-alt="Conceptual book cover with dark rich textures and elegant minimal typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaOjFibvyHtHK3ffB3HNHRrUU3xhKhDwP-HDktk4GG1PzePrkqwRvM5_YWA1r4ZgQAC5QAv0NjEu4L3oLhE1o7JmC14AeHKVvSyLtjWbhLS3_ncZnDrPuS7YjeimJQ_2ogGUHyICuenjb-sApPrbnTciHDeRXShV2ynUlBGnGbbGnQUtPI1Bp4RliPxD6SNPPnLzBLdaJs-MnEIhNaKqJg-yikGwEYh3ejU1JdgeNFZXCESYBLhHSiPBSnAKfP4GyFWoeatc8D8_Ps"/>
+</div>
+<p class="font-headline font-bold text-on-surface line-clamp-1">Klara and the Sun</p>
+<p class="text-sm text-on-surface-variant">Kazuo Ishiguro</p>
+<p class="text-primary font-bold mt-1">$21.50</p>
+</div>
+<!-- Book Card 3 -->
+<div class="flex-none w-48 snap-start">
+<div class="bg-surface-container-lowest rounded-xl p-0 mb-4 transition-transform duration-500 hover:scale-105">
+<img alt="Similar book 3" class="w-full h-64 object-cover rounded-xl shadow-sm" data-alt="Book cover featuring a beautiful landscape illustration in a contemporary graphic design style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKRZlNOcqifbiJ3Q0j5dEqPq0U02f097B8ddPvhzfiu2ismbY7eK9Aa6VtumQ1PjgzMaSqEHt2xZEp7ZmNozQ-cZsAsA66fZ8Ex3yzOGre4Br29Na02Lswq7Mw5amv9-BOM4eOlLWYO5bQjJx9pNLhrlKEVNX9Ur_yo4Iz5eqKAeioDdyfEARoX8F6_fL6nSqWD4_3SSixv9M1j3OHim2ZmnEw_qHHyW6pMhMHBKAABFiy5wswpjPDWLaRwkNNECgu7cj5eklLFV2D"/>
+</div>
+<p class="font-headline font-bold text-on-surface line-clamp-1">Sea of Tranquility</p>
+<p class="text-sm text-on-surface-variant">Emily St. John Mandel</p>
+<p class="text-primary font-bold mt-1">$19.99</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-8 bg-surface/80 backdrop-blur-xl rounded-t-3xl shadow-[0_-10px_40px_rgba(26,28,27,0.05)]">
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-indigo-500 transition-all scale-95-on-click">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-manrope font-medium text-[11px] uppercase tracking-widest mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-indigo-500 transition-all scale-95-on-click">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-manrope font-medium text-[11px] uppercase tracking-widest mt-1">Search</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-indigo-500 transition-all scale-95-on-click">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-manrope font-medium text-[11px] uppercase tracking-widest mt-1">Wishlist</span>
+</div>
+<div class="flex flex-col items-center justify-center text-indigo-700 dark:text-indigo-300 bg-indigo-50/50 dark:bg-indigo-900/20 rounded-xl px-3 py-1 scale-95-on-click">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-manrope font-medium text-[11px] uppercase tracking-widest mt-1">Cart</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-indigo-500 transition-all scale-95-on-click">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-manrope font-medium text-[11px] uppercase tracking-widest mt-1">Profile</span>
+</div>
+</nav>
+</body></html>

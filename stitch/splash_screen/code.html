@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:ital,wght@0,700;0,800;1,700;1,800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#6c3a00",
+                    "tertiary-fixed": "#ffdcc1",
+                    "on-primary-fixed-variant": "#2b38aa",
+                    "surface-variant": "#e2e3e0",
+                    "surface-container": "#eeeeeb",
+                    "surface-tint": "#4552c3",
+                    "on-primary-container": "#faf7ff",
+                    "primary-fixed-dim": "#bdc2ff",
+                    "tertiary": "#874a00",
+                    "outline-variant": "#c6c5d5",
+                    "primary": "#404dbe",
+                    "background": "#f9f9f6",
+                    "on-error": "#ffffff",
+                    "tertiary-container": "#aa5f00",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f4f4f1",
+                    "secondary-fixed-dim": "#cfc5b7",
+                    "on-tertiary-fixed": "#2e1500",
+                    "inverse-primary": "#bdc2ff",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#e2e3e0",
+                    "surface-bright": "#f9f9f6",
+                    "primary-container": "#5a67d8",
+                    "primary-fixed": "#dfe0ff",
+                    "inverse-on-surface": "#f1f1ee",
+                    "outline": "#767684",
+                    "on-surface-variant": "#454653",
+                    "on-secondary-fixed-variant": "#4c463b",
+                    "on-surface": "#1a1c1b",
+                    "on-secondary-fixed": "#201b12",
+                    "on-tertiary-container": "#fff6f2",
+                    "surface-dim": "#dadad7",
+                    "on-primary-fixed": "#000965",
+                    "inverse-surface": "#2f312f",
+                    "tertiary-fixed-dim": "#ffb778",
+                    "on-secondary-container": "#6b6358",
+                    "surface": "#f9f9f6",
+                    "secondary-container": "#ece1d2",
+                    "secondary": "#655d52",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1a1c1b",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#ece1d2",
+                    "surface-container-high": "#e8e8e5",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-shadow-subtle {
+            text-shadow: 0 4px 12px rgba(64, 77, 190, 0.08);
+        }
+        .thread-path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 3s ease-out forwards;
+        }
+        @keyframes dash {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed overflow-hidden">
+<!-- Splash Screen Wrapper -->
+<main class="relative h-screen w-full flex flex-col items-center justify-center p-8 overflow-hidden">
+<!-- Abstract Thread Design (Background Layer) -->
+<div class="absolute inset-0 z-0 flex items-center justify-center opacity-40 pointer-events-none">
+<svg class="w-full h-full max-w-lg" fill="none" viewbox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+<path class="thread-path" d="M-50,250 C100,150 150,400 250,250 C350,100 400,350 550,250" stroke="url(#thread-gradient)" stroke-linecap="round" stroke-width="1.5"></path>
+<path class="thread-path" d="M-50,280 C120,180 180,430 250,280 C320,130 380,380 550,280" stroke="url(#thread-gradient)" stroke-linecap="round" stroke-width="1" style="animation-delay: 0.5s;"></path>
+<defs>
+<lineargradient id="thread-gradient" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#404dbe" stop-opacity="0"></stop>
+<stop offset="50%" stop-color="#404dbe" stop-opacity="0.6"></stop>
+<stop offset="100%" stop-color="#404dbe" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+<!-- Content Canvas -->
+<div class="relative z-10 flex flex-col items-center text-center">
+<!-- Logo Section -->
+<div class="mb-6 flex flex-col items-center">
+<div class="mb-4">
+<!-- Stylized visual anchor representing weaving -->
+<div class="w-16 h-16 bg-surface-container-lowest rounded-full flex items-center justify-center shadow-sm border-[0.5px] border-outline-variant/20">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="auto_stories">auto_stories</span>
+</div>
+</div>
+<h1 class="font-headline font-bold text-6xl italic tracking-tighter text-primary text-shadow-subtle leading-tight">
+                    BookLoom
+                </h1>
+</div>
+<!-- Tagline -->
+<div class="max-w-xs">
+<p class="text-on-surface-variant font-body text-sm tracking-widest uppercase opacity-80 leading-loose">
+                    Where Stories Are Woven Together
+                </p>
+</div>
+</div>
+<!-- Subtle Bottom Anchor (Progressive Reveal) -->
+<div class="absolute bottom-16 flex flex-col items-center gap-4">
+<div class="flex gap-1.5">
+<div class="w-1.5 h-1.5 rounded-full bg-primary/40"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-primary/20"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-primary/10"></div>
+</div>
+</div>
+<!-- Decorative Accents -->
+<div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-surface-container-low/30 to-transparent pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-surface-container-low/30 to-transparent pointer-events-none"></div>
+</main>
+<!-- Invisible Shell Layer (For structure mapping based on JSON anchors if needed) -->
+<!-- The prompt requested a Splash Screen which implies focused journey, thus nav is suppressed -->
+</body></html>

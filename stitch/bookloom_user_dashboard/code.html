@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#e8e8e5",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#bdc2ff",
+                    "on-surface": "#1a1c1b",
+                    "primary-fixed": "#dfe0ff",
+                    "on-primary-fixed": "#000965",
+                    "tertiary-container": "#aa5f00",
+                    "surface-variant": "#e2e3e0",
+                    "on-error-container": "#93000a",
+                    "surface": "#f9f9f6",
+                    "outline": "#767684",
+                    "surface-container-low": "#f4f4f1",
+                    "surface-container-highest": "#e2e3e0",
+                    "on-secondary-fixed": "#201b12",
+                    "error": "#ba1a1a",
+                    "tertiary": "#874a00",
+                    "on-tertiary-fixed": "#2e1500",
+                    "primary-container": "#5a67d8",
+                    "on-tertiary-container": "#fff6f2",
+                    "surface-bright": "#f9f9f6",
+                    "on-secondary-container": "#6b6358",
+                    "on-secondary-fixed-variant": "#4c463b",
+                    "inverse-on-surface": "#f1f1ee",
+                    "secondary": "#655d52",
+                    "inverse-surface": "#2f312f",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#1a1c1b",
+                    "primary": "#404dbe",
+                    "outline-variant": "#c6c5d5",
+                    "on-tertiary-fixed-variant": "#6c3a00",
+                    "on-surface-variant": "#454653",
+                    "secondary-fixed-dim": "#cfc5b7",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#dadad7",
+                    "surface-container": "#eeeeeb",
+                    "secondary-fixed": "#ece1d2",
+                    "background": "#f9f9f6",
+                    "inverse-primary": "#bdc2ff",
+                    "secondary-container": "#ece1d2",
+                    "surface-tint": "#4552c3",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#ffdcc1",
+                    "tertiary-fixed-dim": "#ffb778",
+                    "on-primary-container": "#faf7ff",
+                    "on-primary-fixed-variant": "#2b38aa"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ease-out-quint {
+            transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- SideNavBar Component -->
+<aside class="fixed left-0 top-0 h-full flex flex-col p-6 bg-stone-50 dark:bg-stone-950 h-screen w-64 border-r-0 font-manrope font-medium z-40">
+<div class="mb-10">
+<h1 class="text-xl font-black text-indigo-700">BookLoom</h1>
+</div>
+<div class="flex items-center gap-3 mb-8 px-2">
+<div class="w-10 h-10 rounded-full bg-secondary-container overflow-hidden">
+<img alt="The Collector" class="w-full h-full object-cover" data-alt="close-up portrait of a middle-aged man with salt and pepper beard and warm eyes, soft studio lighting on beige background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtheIdqn3wjKp6-08_RlVLd7rpsH3zpC7DIFxLyIKOIAmVp9fx_4a5023dMlDOCscZcDdrwJoEvKP1upITYUoApZc41Tm3Hl79LWbpK0jeRgG1-7hAvzd6cmVS8vjg9astDXi5HWbyGmo7kNWxrkhfzIy2OSIJ14_dXr3opz3tdtyo1mo7mKL2bpTNdPhKCEbz7x68pQvvz0DRB2x4Gdxn5831qdRWa0maI4t-OTsiudf7NJT5R_2qsprtKflzTXHySG_4kNGFSoKd"/>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-on-surface">The Collector</span>
+<span class="text-[10px] uppercase tracking-wider text-on-surface-variant font-bold">Gold Member</span>
+</div>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-indigo-700 dark:text-indigo-300 font-bold border-r-4 border-indigo-600 bg-stone-100 dark:bg-stone-900 transition-all ease-out-quint" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span>Home</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 dark:text-stone-500 hover:bg-stone-100 transition-all ease-out-quint" href="#">
+<span class="material-symbols-outlined" data-icon="book_2">book_2</span>
+<span>My Library</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 dark:text-stone-500 hover:bg-stone-100 transition-all ease-out-quint" href="#">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span>Wishlist</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 dark:text-stone-500 hover:bg-stone-100 transition-all ease-out-quint" href="#">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span>Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 dark:text-stone-500 hover:bg-stone-100 transition-all ease-out-quint" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="mt-auto">
+<button class="w-full bg-primary text-on-primary py-3 px-4 rounded-full text-sm font-semibold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-sm" data-icon="smart_toy">smart_toy</span>
+                Talk to AI Assistant
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 min-h-screen p-8 lg:p-12 max-w-screen-2xl mx-auto">
+<!-- Header Section -->
+<header class="flex justify-between items-end mb-12">
+<div>
+<p class="text-primary font-semibold tracking-widest text-xs uppercase mb-2">Dashboard Overview</p>
+<h2 class="text-4xl font-headline font-extrabold tracking-tighter text-on-surface">Welcome back, Arthur</h2>
+</div>
+<div class="flex items-center gap-4 bg-surface-container-low p-2 rounded-full">
+<div class="px-6 py-2">
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Loom Points</p>
+<p class="text-xl font-headline font-black text-indigo-700">2,450 <span class="text-xs font-medium text-on-surface-variant">pts</span></p>
+</div>
+<div class="h-10 w-[1px] bg-outline-variant/20"></div>
+<button class="p-3 bg-surface-container-lowest rounded-full shadow-sm">
+<span class="material-symbols-outlined text-indigo-600" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Hero Progress Card (Bento Large) -->
+<section class="col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-xl p-8 flex flex-col justify-between relative overflow-hidden group min-h-[320px]">
+<div class="relative z-10">
+<h3 class="text-2xl font-headline font-bold mb-2">Reading Journey</h3>
+<p class="text-on-surface-variant max-w-xs">You've completed 4 books this month. You're only 120 pages away from your monthly goal!</p>
+</div>
+<div class="relative z-10 mt-8">
+<div class="flex justify-between items-end mb-3">
+<div>
+<span class="text-4xl font-black text-primary">82%</span>
+<span class="text-sm font-medium text-on-surface-variant ml-2">Progress to Goal</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-widest text-indigo-600">Season of Ink</span>
+</div>
+<div class="w-full h-3 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[82%] rounded-full"></div>
+</div>
+</div>
+<!-- Abstract Decorative Image -->
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none">
+<img class="w-full h-full object-cover" data-alt="abstract close-up of book pages fanned out creating a soft paper texture and shadows in warm neutral tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8AJGtC5_3ivoSn7YJvbfTPzSVIo-wlSLmJiUinEz6GOzVdbR1kJXjXjICUwJkM-iO-U9lMHVrAFdxe6lI5ncN8tlYmFl-86J9GcikUhjBqBlqdKzp0y3qRRuRJ-6n4hqMdychIBWHX2CdWHCGqxz2mbxfMOYYnIsn5RZkeXngbBCKHjEpSinSuatDTo7aS8h1ZpSAlBChxD_mTV5US-XE_3VVSyOGKC7lDdAzQPB2emrvedNnbo0XgjIIxeRW0QuUP4Jp5cOd1hTW"/>
+</div>
+</section>
+<!-- Quick Action Card -->
+<section class="col-span-12 lg:col-span-4 bg-tertiary-container text-on-tertiary-container rounded-xl p-8 flex flex-col justify-center items-start overflow-hidden relative">
+<span class="material-symbols-outlined text-4xl mb-4" data-icon="auto_stories">auto_stories</span>
+<h3 class="text-xl font-headline font-bold mb-4">Resume Reading</h3>
+<p class="text-sm text-on-tertiary-container/80 mb-6 italic">"The Shadow of the Wind" — Chapter 14</p>
+<button class="bg-on-tertiary-container text-tertiary px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-transform ease-out-quint">
+                    Open Reader
+                </button>
+<div class="absolute -bottom-8 -right-8 w-32 h-32 bg-on-tertiary-container/10 rounded-full blur-3xl"></div>
+</section>
+<!-- Recommended Books (Asymmetric Grid) -->
+<section class="col-span-12 mt-8">
+<div class="flex justify-between items-center mb-8">
+<h3 class="text-2xl font-headline font-bold tracking-tight">Curated for Your Atelier</h3>
+<a class="text-sm font-bold text-primary uppercase tracking-widest flex items-center gap-2" href="#">
+                        View All <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Book Card 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[2/3] rounded-xl overflow-hidden mb-4 bg-surface-container-low shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out-quint" data-alt="minimalist book cover of a poetry collection on a clean white surface with sharp shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUcgsja-auzmXiHbICS-mAJ4J4xZgUF4mRwMIfwT6c-P9ZxiR8OnDQQJ9xjHSWetIK4wuKofofuw-7ktpGpw12Sg-DZfmJmDPag_hPcQ1m8J7HuLTOZ-wBpWS4VZg51I-6cbwx6ufet194Ou3c8pwgIYM9DCgY1ErEEWyvOZvzDj0truLFqYimDD695nRf7yL-nZioGsbPMpO6o0ZcDyDPBkDPQs-5YK8Jn-EAm6zpnrF8ZwZvkAz2UKehLfV4ymZOSaZy9SdGDZR4"/>
+</div>
+<p class="text-[10px] uppercase tracking-widest text-primary font-bold mb-1">Philosophy</p>
+<h4 class="font-headline font-bold text-lg leading-tight group-hover:text-primary transition-colors">The Architecture of Light</h4>
+<p class="text-sm text-on-surface-variant mt-1">Elias Thorne</p>
+</div>
+<!-- Book Card 2 -->
+<div class="group cursor-pointer pt-6">
+<div class="aspect-[2/3] rounded-xl overflow-hidden mb-4 bg-surface-container-low shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out-quint" data-alt="hardcover book with textured linen spine on a dark oak table next to a cup of espresso" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFqdDhRyAwUv10luJtzBbb1kT4bPJaRFPWzXLJ3N0k7cNDWhRUDhBWK2fZp9T6Vs5jJHCcRNp43gsvtPA7YFMinhxZbf9wZF1j4IOYhJOv4C782w8kEBxkzERtpv9TmPW5rGsZSzjLuf3Y_dmMnkfZsH7bM7rkBVYdD9vvWDdA3Ng2dkBVfbPJx2pC_Xlsx23kMDfAo-4_CdzmdvLScfBgdWNZ2NNQYXSYxi7YRs8255zhy9al9g5L6g6CGqtO7c6VE8_kHegVUAJf"/>
+</div>
+<p class="text-[10px] uppercase tracking-widest text-primary font-bold mb-1">Fiction</p>
+<h4 class="font-headline font-bold text-lg leading-tight group-hover:text-primary transition-colors">Echoes of the Loom</h4>
+<p class="text-sm text-on-surface-variant mt-1">Clara Montgomery</p>
+</div>
+<!-- Book Card 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[2/3] rounded-xl overflow-hidden mb-4 bg-surface-container-low shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out-quint" data-alt="classic leather-bound book laying open on a velvet surface with golden hour sunlight hitting the pages" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl1i6hK5UEyiiA-FGjAFLE7pz6uS9IjBfctDReURPjnhNHaCczB1eo3n8d1HzhgajXuB0yany0xnpfmECy7LIfFZLxEHr-8_reaSdpMAJHygmg2O5h6ciUojQEsluQSxTAckuHvWRGUJwN3xDbCj2fmPvBVZIfO1Fo37ue1mh7ubnNGiLPvtFHua6HPfJXCLiZpqG_nbrKr12KYjTG7SJ1oF__CWgC70Pu9iR1Zob-GnBDtZvc2NdWM0Bjw8Bb2-fSymBHntOV_0vp"/>
+</div>
+<p class="text-[10px] uppercase tracking-widest text-primary font-bold mb-1">Classics</p>
+<h4 class="font-headline font-bold text-lg leading-tight group-hover:text-primary transition-colors">Meditation in Motion</h4>
+<p class="text-sm text-on-surface-variant mt-1">Marcus Aurelius</p>
+</div>
+<!-- Book Card 4 -->
+<div class="group cursor-pointer pt-6">
+<div class="aspect-[2/3] rounded-xl overflow-hidden mb-4 bg-surface-container-low shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out-quint" data-alt="modern art book with vibrant abstract cover standing against a soft gray background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHvTMf8c82rfEnYcW_lfLCvMsiAyR1kJwpuHPPU53HcHLpkbys-KhpnS2meBeb8YdRZLStVDD8tFanAkH4u8DtIq6wdlcjJmJVS8-2T39g-v7h9vmHI6YiCZgTe2gOzN846VKUp9ThyLUSxjou4WIo98Tmb7s88zHIWm41z9R7v5wkO3I6_E1DwkUdNLfiMab9yg5llUuBNgGxI3qfRCaU_vty3J08CEbNjT5vUO7u7MrAhcNhVnQZ_8LizIkXnO9pYxqsq4__0FNZ"/>
+</div>
+<p class="text-[10px] uppercase tracking-widest text-primary font-bold mb-1">Design</p>
+<h4 class="font-headline font-bold text-lg leading-tight group-hover:text-primary transition-colors">Bauhaus Principles</h4>
+<p class="text-sm text-on-surface-variant mt-1">Walter Gropius</p>
+</div>
+</div>
+</section>
+<!-- Recent Activity List -->
+<section class="col-span-12 lg:col-span-12 mt-12 bg-surface-container-low rounded-3xl p-10">
+<h3 class="text-2xl font-headline font-bold mb-8">Recent Activity</h3>
+<div class="space-y-6">
+<!-- Activity Item 1 -->
+<div class="flex items-center gap-6 p-4 bg-surface-container-lowest rounded-2xl">
+<div class="w-12 h-12 flex items-center justify-center bg-indigo-50 text-indigo-600 rounded-full">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold">New Order Confirmed</p>
+<p class="text-xs text-on-surface-variant">"The Midnight Library" and 2 others.</p>
+</div>
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Yesterday</p>
+<p class="text-sm font-headline font-bold text-primary">$42.00</p>
+</div>
+</div>
+<!-- Activity Item 2 -->
+<div class="flex items-center gap-6 p-4 bg-surface-container-lowest rounded-2xl">
+<div class="w-12 h-12 flex items-center justify-center bg-amber-50 text-amber-600 rounded-full">
+<span class="material-symbols-outlined" data-icon="workspace_premium" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold">Achievement Unlocked</p>
+<p class="text-xs text-on-surface-variant">"Voracious Reader" - Finished 10 books this quarter.</p>
+</div>
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">3 Days Ago</p>
+<p class="text-sm font-headline font-bold text-tertiary">+500 pts</p>
+</div>
+</div>
+<!-- Activity Item 3 -->
+<div class="flex items-center gap-6 p-4 bg-surface-container-lowest rounded-2xl">
+<div class="w-12 h-12 flex items-center justify-center bg-rose-50 text-rose-600 rounded-full">
+<span class="material-symbols-outlined" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold">Added to Wishlist</p>
+<p class="text-xs text-on-surface-variant">"Circe" by Madeline Miller.</p>
+</div>
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Oct 24</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer Section -->
+<footer class="mt-20 py-16 flex flex-col md:flex-row justify-between items-center gap-8 bg-stone-100 dark:bg-stone-900 w-full rounded-t-3xl font-inter text-sm uppercase tracking-widest">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="text-lg font-bold text-stone-800 dark:text-stone-200">BookLoom</span>
+<p class="text-stone-500 dark:text-stone-400 lowercase tracking-normal">© 2024 BookLoom Atelier. Curated with intention.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-stone-500 dark:text-stone-400 hover:text-indigo-500 transition-colors" href="#">Privacy Policy</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-indigo-500 transition-colors" href="#">Terms of Service</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-indigo-500 transition-colors" href="#">Shipping &amp; Returns</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-indigo-500 transition-colors" href="#">Contact Us</a>
+</div>
+</footer>
+</main>
+</body></html>

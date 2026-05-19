@@ -1,0 +1,186 @@
+import 'mock_database.dart';
+
+// ── Books 51–200 ──────────────────────────────────────────────────────────────
+const List<MockBook> booksPartA = [
+  // Romance
+  MockBook(id:'51',title:'The Fault in Our Stars',author:'John Green',description:'A love story between two teens fighting cancer.',genre:'Romance',rating:4.7,price:14.00,isAudioAvailable:true,pages:313,difficulty:'Beginner'),
+  MockBook(id:'52',title:'Pride and Prejudice',author:'Jane Austen',description:'The timeless story of Elizabeth Bennet and Mr. Darcy.',genre:'Romance',rating:4.8,price:9.00,isAudioAvailable:true,pages:432,difficulty:'Intermediate'),
+  MockBook(id:'53',title:'Outlander',author:'Diana Gabaldon',description:'A woman is transported back to 18th-century Scotland.',genre:'Romance',rating:4.6,price:18.00,isAudioAvailable:true,pages:627,difficulty:'Intermediate'),
+  MockBook(id:'54',title:'The Hating Game',author:'Sally Thorne',description:'Two rivals forced to share an office discover feelings.',genre:'Romance',rating:4.4,price:13.00,isAudioAvailable:false,pages:381,difficulty:'Beginner'),
+  MockBook(id:'55',title:'It Ends with Us',author:'Colleen Hoover',description:'A brave and heartbreaking story about love and resilience.',genre:'Romance',rating:4.7,price:15.00,isAudioAvailable:true,pages:384,difficulty:'Beginner'),
+  MockBook(id:'56',title:'The Kiss Quotient',author:'Helen Hoang',description:'A woman with Asperger\'s hires a professional to teach social skills.',genre:'Romance',rating:4.3,price:14.00,isAudioAvailable:false,pages:336,difficulty:'Beginner'),
+  MockBook(id:'57',title:'Beach Read',author:'Emily Henry',description:'Two writers swap genres for the summer.',genre:'Romance',rating:4.4,price:15.00,isAudioAvailable:true,pages:368,difficulty:'Beginner'),
+  MockBook(id:'58',title:'People We Meet on Vacation',author:'Emily Henry',description:'Two best friends — one trip that changes everything.',genre:'Romance',rating:4.5,price:15.00,isAudioAvailable:true,pages:384,difficulty:'Beginner'),
+  MockBook(id:'59',title:'The Love Hypothesis',author:'Ali Hazelwood',description:'A fake-dating experiment becomes something more real.',genre:'Romance',rating:4.3,price:14.00,isAudioAvailable:false,pages:365,difficulty:'Beginner'),
+  MockBook(id:'60',title:'Normal People',author:'Sally Rooney',description:'A complex relationship between two young Irish people.',genre:'Romance',rating:4.2,price:15.00,isAudioAvailable:true,pages:273,difficulty:'Intermediate'),
+
+  // Thriller / Mystery
+  MockBook(id:'61',title:'And Then There Were None',author:'Agatha Christie',description:'Ten strangers are lured to an island — then start dying.',genre:'Thriller',rating:4.8,price:12.00,isAudioAvailable:true,pages:256,difficulty:'Beginner'),
+  MockBook(id:'62',title:'The Girl with the Dragon Tattoo',author:'Stieg Larsson',description:'A mystery writer and hacker uncover a 40-year-old murder.',genre:'Thriller',rating:4.6,price:17.00,isAudioAvailable:true,pages:672,difficulty:'Intermediate'),
+  MockBook(id:'63',title:'In the Woods',author:'Tana French',description:'A Dublin detective investigates a case echoing his own trauma.',genre:'Thriller',rating:4.3,price:15.00,isAudioAvailable:false,pages:464,difficulty:'Intermediate'),
+  MockBook(id:'64',title:'Big Little Lies',author:'Liane Moriarty',description:'Three women — secrets, lies, and a murder.',genre:'Thriller',rating:4.5,price:16.00,isAudioAvailable:true,pages:460,difficulty:'Beginner'),
+  MockBook(id:'65',title:'The Woman in the Window',author:'A.J. Finn',description:'An agoraphobic woman witnesses something she shouldn\'t.',genre:'Thriller',rating:4.2,price:15.00,isAudioAvailable:true,pages:448,difficulty:'Beginner'),
+  MockBook(id:'66',title:'Sharp Objects',author:'Gillian Flynn',description:'A reporter returns to her hometown to cover a murder.',genre:'Thriller',rating:4.3,price:14.00,isAudioAvailable:true,pages:254,difficulty:'Intermediate'),
+  MockBook(id:'67',title:'The Couple Next Door',author:'Shari Lapena',description:'A baby goes missing at a dinner party next door.',genre:'Thriller',rating:4.1,price:13.00,isAudioAvailable:false,pages:320,difficulty:'Beginner'),
+  MockBook(id:'68',title:'Verity',author:'Colleen Hoover',description:'A bestselling author\'s manuscript reveals dark secrets.',genre:'Thriller',rating:4.6,price:16.00,isAudioAvailable:true,pages:336,difficulty:'Beginner'),
+  MockBook(id:'69',title:'The Maid',author:'Nita Prose',description:'A hotel maid discovers a dead body in a penthouse suite.',genre:'Thriller',rating:4.2,price:15.00,isAudioAvailable:true,pages:304,difficulty:'Beginner'),
+  MockBook(id:'70',title:'Anxious People',author:'Fredrik Backman',description:'A failed bank robbery becomes a hostage situation.',genre:'Thriller',rating:4.5,price:16.00,isAudioAvailable:true,pages:352,difficulty:'Beginner'),
+
+  // Sci-Fi Extended
+  MockBook(id:'71',title:'The Three-Body Problem',author:'Liu Cixin',description:'Contact with an alien civilization threatens humanity.',genre:'Sci-Fi',rating:4.6,price:18.00,isAudioAvailable:true,pages:400,difficulty:'Advanced'),
+  MockBook(id:'72',title:'Brave New World',author:'Aldous Huxley',description:'A dystopian future of social control and drug compliance.',genre:'Sci-Fi',rating:4.5,price:11.00,isAudioAvailable:true,pages:311,difficulty:'Intermediate'),
+  MockBook(id:'73',title:'1984',author:'George Orwell',description:'Big Brother is watching. Totalitarianism at its extreme.',genre:'Sci-Fi',rating:4.7,price:12.00,isAudioAvailable:true,pages:328,difficulty:'Intermediate'),
+  MockBook(id:'74',title:'Neuromancer',author:'William Gibson',description:'The definitive cyberpunk novel of hackers and AIs.',genre:'Sci-Fi',rating:4.3,price:14.00,isAudioAvailable:false,pages:271,difficulty:'Advanced'),
+  MockBook(id:'75',title:'Ready Player One',author:'Ernest Cline',description:'A virtual reality quest with high stakes for the real world.',genre:'Sci-Fi',rating:4.5,price:16.00,isAudioAvailable:true,pages:372,difficulty:'Beginner'),
+  MockBook(id:'76',title:'Old Man\'s War',author:'John Scalzi',description:'A 75-year-old enlists in the interstellar army.',genre:'Sci-Fi',rating:4.5,price:15.00,isAudioAvailable:true,pages:351,difficulty:'Beginner'),
+  MockBook(id:'77',title:'The Left Hand of Darkness',author:'Ursula K. Le Guin',description:'A gender-fluid society challenges a human ambassador.',genre:'Sci-Fi',rating:4.4,price:13.00,isAudioAvailable:false,pages:304,difficulty:'Advanced'),
+  MockBook(id:'78',title:'Flowers for Algernon',author:'Daniel Keyes',description:'A man with an intellectual disability gains, then loses, genius.',genre:'Sci-Fi',rating:4.6,price:12.00,isAudioAvailable:true,pages:311,difficulty:'Intermediate'),
+  MockBook(id:'79',title:'The Hitchhiker\'s Guide to the Galaxy',author:'Douglas Adams',description:'Earth is demolished for a hyperspace bypass.',genre:'Sci-Fi',rating:4.7,price:13.00,isAudioAvailable:true,pages:224,difficulty:'Beginner'),
+  MockBook(id:'80',title:'Hyperion',author:'Dan Simmons',description:'Seven pilgrims journey to meet the Shrike monster.',genre:'Sci-Fi',rating:4.6,price:17.00,isAudioAvailable:false,pages:482,difficulty:'Advanced'),
+
+  // Fantasy
+  MockBook(id:'81',title:'The Name of the Wind',author:'Patrick Rothfuss',description:'A legendary wizard recounts his extraordinary life.',genre:'Fantasy',rating:4.7,price:18.00,isAudioAvailable:true,pages:662,difficulty:'Intermediate'),
+  MockBook(id:'82',title:'The Way of Kings',author:'Brandon Sanderson',description:'An epic battle for survival on a world with magical storms.',genre:'Fantasy',rating:4.8,price:22.00,isAudioAvailable:true,pages:1007,difficulty:'Advanced'),
+  MockBook(id:'83',title:'The Hobbit',author:'J.R.R. Tolkien',description:'A reluctant hobbit goes on an unexpected adventure.',genre:'Fantasy',rating:4.8,price:14.00,isAudioAvailable:true,pages:310,difficulty:'Beginner'),
+  MockBook(id:'84',title:'Harry Potter and the Sorcerer\'s Stone',author:'J.K. Rowling',description:'A young boy discovers he is a wizard.',genre:'Fantasy',rating:4.9,price:15.00,isAudioAvailable:true,pages:309,difficulty:'Beginner'),
+  MockBook(id:'85',title:'The Final Empire',author:'Brandon Sanderson',description:'A crew of thieves plots to overthrow a god-like ruler.',genre:'Fantasy',rating:4.7,price:18.00,isAudioAvailable:true,pages:541,difficulty:'Intermediate'),
+  MockBook(id:'86',title:'A Game of Thrones',author:'George R.R. Martin',description:'Noble families fight for control of the Iron Throne.',genre:'Fantasy',rating:4.8,price:20.00,isAudioAvailable:true,pages:694,difficulty:'Intermediate'),
+  MockBook(id:'87',title:'The Night Circus',author:'Erin Morgenstern',description:'Two young magicians compete in a magical circus.',genre:'Fantasy',rating:4.5,price:16.00,isAudioAvailable:true,pages:387,difficulty:'Beginner'),
+  MockBook(id:'88',title:'American Gods',author:'Neil Gaiman',description:'Old gods battle new gods in a road trip across America.',genre:'Fantasy',rating:4.5,price:17.00,isAudioAvailable:true,pages:465,difficulty:'Intermediate'),
+  MockBook(id:'89',title:'Mistborn',author:'Brandon Sanderson',description:'Magic, ash, and a revolution against immortal rule.',genre:'Fantasy',rating:4.7,price:18.00,isAudioAvailable:true,pages:541,difficulty:'Intermediate'),
+  MockBook(id:'90',title:'Anansi Boys',author:'Neil Gaiman',description:'A spider god\'s sons discover their divine heritage.',genre:'Fantasy',rating:4.4,price:15.00,isAudioAvailable:true,pages:336,difficulty:'Beginner'),
+
+  // History Extended
+  MockBook(id:'91',title:'The Silk Roads',author:'Peter Frankopan',description:'A new history of the world through trade routes.',genre:'History',rating:4.5,price:22.00,isAudioAvailable:true,pages:636,difficulty:'Advanced'),
+  MockBook(id:'92',title:'Guns, Germs, and Steel',author:'Jared Diamond',description:'Why some societies dominated others throughout history.',genre:'History',rating:4.6,price:20.00,isAudioAvailable:true,pages:480,difficulty:'Intermediate'),
+  MockBook(id:'93',title:'The Rise and Fall of the Third Reich',author:'William L. Shirer',description:'A definitive account of Nazi Germany.',genre:'History',rating:4.8,price:28.00,isAudioAvailable:false,pages:1280,difficulty:'Advanced'),
+  MockBook(id:'94',title:'SPQR',author:'Mary Beard',description:'A history of ancient Rome by a leading classicist.',genre:'History',rating:4.4,price:18.00,isAudioAvailable:true,pages:606,difficulty:'Intermediate'),
+  MockBook(id:'95',title:'The Wright Brothers',author:'David McCullough',description:'The miraculous achievement of the pioneering aviation brothers.',genre:'History',rating:4.6,price:17.00,isAudioAvailable:true,pages:336,difficulty:'Beginner'),
+  MockBook(id:'96',title:'Dead Wake',author:'Erik Larson',description:'The last crossing of the Lusitania.',genre:'History',rating:4.5,price:18.00,isAudioAvailable:true,pages:430,difficulty:'Intermediate'),
+  MockBook(id:'97',title:'The Devil in the White City',author:'Erik Larson',description:'A serial killer lurks during the 1893 Chicago World\'s Fair.',genre:'History',rating:4.6,price:17.00,isAudioAvailable:true,pages:447,difficulty:'Intermediate'),
+  MockBook(id:'98',title:'Genghis Khan',author:'Jack Weatherford',description:'How a nomadic warrior built the largest empire on earth.',genre:'History',rating:4.5,price:16.00,isAudioAvailable:true,pages:312,difficulty:'Beginner'),
+  MockBook(id:'99',title:'The Diary of a Young Girl',author:'Anne Frank',description:'The moving diary kept by a Jewish teenager in hiding.',genre:'History',rating:4.9,price:11.00,isAudioAvailable:true,pages:283,difficulty:'Beginner'),
+  MockBook(id:'100',title:'1776',author:'David McCullough',description:'The story of America\'s founding year.',genre:'History',rating:4.5,price:17.00,isAudioAvailable:true,pages:294,difficulty:'Beginner'),
+
+  // Health & Psychology Extended
+  MockBook(id:'101',title:'Dare to Lead',author:'Brené Brown',description:'Brave work, tough conversations, whole hearts.',genre:'Health',rating:4.6,price:22.00,isAudioAvailable:true,pages:321,difficulty:'Beginner'),
+  MockBook(id:'102',title:'The Gifts of Imperfection',author:'Brené Brown',description:'Let go of who you think you should be.',genre:'Health',rating:4.6,price:18.00,isAudioAvailable:true,pages:160,difficulty:'Beginner'),
+  MockBook(id:'103',title:'Lost Connections',author:'Johann Hari',description:'Uncovering the real causes of depression and anxiety.',genre:'Health',rating:4.5,price:18.00,isAudioAvailable:true,pages:352,difficulty:'Beginner'),
+  MockBook(id:'104',title:'When Things Fall Apart',author:'Pema Chödrön',description:'Heart advice for difficult times.',genre:'Health',rating:4.7,price:14.00,isAudioAvailable:true,pages:176,difficulty:'Beginner'),
+  MockBook(id:'105',title:'The Happiness Advantage',author:'Shawn Achor',description:'How a positive brain fuels success in work and life.',genre:'Health',rating:4.4,price:18.00,isAudioAvailable:true,pages:256,difficulty:'Beginner'),
+  MockBook(id:'106',title:'Emotional Intelligence',author:'Daniel Goleman',description:'Why EQ can matter more than IQ.',genre:'Health',rating:4.5,price:20.00,isAudioAvailable:true,pages:352,difficulty:'Intermediate'),
+  MockBook(id:'107',title:'The Willpower Instinct',author:'Kelly McGonigal',description:'How self-control works and what you can do to get more of it.',genre:'Health',rating:4.4,price:17.00,isAudioAvailable:true,pages:275,difficulty:'Beginner'),
+  MockBook(id:'108',title:'Flow',author:'Mihaly Csikszentmihalyi',description:'The psychology of optimal experience.',genre:'Health',rating:4.5,price:18.00,isAudioAvailable:false,pages:303,difficulty:'Intermediate'),
+  MockBook(id:'109',title:'Grit',author:'Angela Duckworth',description:'The power of passion and perseverance.',genre:'Health',rating:4.5,price:19.00,isAudioAvailable:true,pages:333,difficulty:'Beginner'),
+  MockBook(id:'110',title:'The Untethered Soul',author:'Michael A. Singer',description:'The journey beyond yourself.',genre:'Health',rating:4.7,price:16.00,isAudioAvailable:true,pages:200,difficulty:'Beginner'),
+
+  // Technology Extended
+  MockBook(id:'111',title:'The Innovators',author:'Walter Isaacson',description:'How a group of hackers and geniuses created the digital revolution.',genre:'Technology',rating:4.6,price:24.00,isAudioAvailable:true,pages:542,difficulty:'Intermediate'),
+  MockBook(id:'112',title:'Elon Musk (by Ashlee Vance)',author:'Ashlee Vance',description:'Tesla, SpaceX, and the quest for a fantastic future.',genre:'Technology',rating:4.6,price:20.00,isAudioAvailable:true,pages:400,difficulty:'Beginner'),
+  MockBook(id:'113',title:'The Algorithm',author:'Nick Diakopoulos',description:'How AI decides your future.',genre:'Technology',rating:4.2,price:22.00,isAudioAvailable:false,pages:288,difficulty:'Intermediate'),
+  MockBook(id:'114',title:'Clean Code',author:'Robert C. Martin',description:'A handbook of agile software craftsmanship.',genre:'Technology',rating:4.5,price:30.00,isAudioAvailable:false,pages:431,difficulty:'Advanced'),
+  MockBook(id:'115',title:'The Pragmatic Programmer',author:'David Thomas',description:'Your journey to mastery in software development.',genre:'Technology',rating:4.6,price:32.00,isAudioAvailable:false,pages:352,difficulty:'Advanced'),
+  MockBook(id:'116',title:'Hooked',author:'Nir Eyal',description:'How to build habit-forming products.',genre:'Technology',rating:4.3,price:18.00,isAudioAvailable:true,pages:256,difficulty:'Beginner'),
+  MockBook(id:'117',title:'The Lean Machine',author:'Dantar Oosterwal',description:'Revolutionary lean product development at Harley-Davidson.',genre:'Technology',rating:4.3,price:19.00,isAudioAvailable:false,pages:272,difficulty:'Intermediate'),
+  MockBook(id:'118',title:'Platform Revolution',author:'Geoffrey Parker',description:'How networked markets are transforming the economy.',genre:'Technology',rating:4.3,price:22.00,isAudioAvailable:false,pages:352,difficulty:'Intermediate'),
+  MockBook(id:'119',title:'Weapons of Math Destruction',author:'Cathy O\'Neil',description:'How Big Data increases inequality and threatens democracy.',genre:'Technology',rating:4.4,price:20.00,isAudioAvailable:true,pages:272,difficulty:'Intermediate'),
+  MockBook(id:'120',title:'No Filter',author:'Sarah Frier',description:'The inside story of Instagram.',genre:'Technology',rating:4.3,price:22.00,isAudioAvailable:true,pages:352,difficulty:'Beginner'),
+
+  // Biography Extended
+  MockBook(id:'121',title:'Leonardo da Vinci',author:'Walter Isaacson',description:'Biography of the ultimate Renaissance man.',genre:'Biography',rating:4.7,price:28.00,isAudioAvailable:true,pages:624,difficulty:'Intermediate'),
+  MockBook(id:'122',title:'The Diary of Frida Kahlo',author:'Frida Kahlo',description:'An intimate self-portrait through the iconic artist\'s diary.',genre:'Biography',rating:4.7,price:22.00,isAudioAvailable:false,pages:295,difficulty:'Beginner'),
+  MockBook(id:'123',title:'Alexander Hamilton',author:'Ron Chernow',description:'The definitive biography of America\'s founding genius.',genre:'Biography',rating:4.7,price:25.00,isAudioAvailable:true,pages:818,difficulty:'Advanced'),
+  MockBook(id:'124',title:'The Story of My Experiments with Truth',author:'Mahatma Gandhi',description:'Gandhi\'s autobiography.',genre:'Biography',rating:4.7,price:15.00,isAudioAvailable:true,pages:560,difficulty:'Intermediate'),
+  MockBook(id:'125',title:'Wings of Fire',author:'A.P.J. Abdul Kalam',description:'Autobiography of the Missile Man of India.',genre:'Biography',rating:4.9,price:12.00,isAudioAvailable:true,pages:196,difficulty:'Beginner'),
+  MockBook(id:'126',title:'Open',author:'Andre Agassi',description:'The surprising, moving autobiography of a tennis champion.',genre:'Biography',rating:4.7,price:20.00,isAudioAvailable:true,pages:385,difficulty:'Beginner'),
+  MockBook(id:'127',title:'The Story of a New Name',author:'Elena Ferrante',description:'The second of the Neapolitan novels.',genre:'Biography',rating:4.5,price:16.00,isAudioAvailable:true,pages:471,difficulty:'Intermediate'),
+  MockBook(id:'128',title:'Born a Crime',author:'Trevor Noah',description:'Stories from a South African childhood.',genre:'Biography',rating:4.8,price:18.00,isAudioAvailable:true,pages:304,difficulty:'Beginner'),
+  MockBook(id:'129',title:'I Am Malala',author:'Malala Yousafzai',description:'The girl who stood up for education and was shot by the Taliban.',genre:'Biography',rating:4.8,price:16.00,isAudioAvailable:true,pages:327,difficulty:'Beginner'),
+  MockBook(id:'130',title:'Becoming',author:'Michelle Obama',description:'The first lady\'s intimate and powerful memoir.',genre:'Biography',rating:4.9,price:22.00,isAudioAvailable:true,pages:448,difficulty:'Beginner'),
+
+  // Self-Help Extended
+  MockBook(id:'131',title:'The 4-Hour Workweek',author:'Timothy Ferriss',description:'Escape 9-5, live anywhere, and join the new rich.',genre:'Self-Help',rating:4.3,price:18.00,isAudioAvailable:true,pages:396,difficulty:'Beginner'),
+  MockBook(id:'132',title:'Essentialism',author:'Greg McKeown',description:'The disciplined pursuit of less.',genre:'Self-Help',rating:4.6,price:20.00,isAudioAvailable:true,pages:260,difficulty:'Beginner'),
+  MockBook(id:'133',title:'The One Thing',author:'Gary Keller',description:'The surprisingly simple truth behind extraordinary results.',genre:'Self-Help',rating:4.5,price:18.00,isAudioAvailable:true,pages:240,difficulty:'Beginner'),
+  MockBook(id:'134',title:'Think Like a Monk',author:'Jay Shetty',description:'Train your mind for peace and purpose every day.',genre:'Self-Help',rating:4.6,price:20.00,isAudioAvailable:true,pages:352,difficulty:'Beginner'),
+  MockBook(id:'135',title:'Rich Dad\'s Cashflow Quadrant',author:'Robert Kiyosaki',description:'Guide to financial freedom.',genre:'Self-Help',rating:4.3,price:14.00,isAudioAvailable:true,pages:336,difficulty:'Beginner'),
+  MockBook(id:'136',title:'The Magic of Thinking Big',author:'David Schwartz',description:'Achieve everything you always wanted.',genre:'Self-Help',rating:4.5,price:15.00,isAudioAvailable:true,pages:238,difficulty:'Beginner'),
+  MockBook(id:'137',title:'Getting Things Done',author:'David Allen',description:'The art of stress-free productivity.',genre:'Self-Help',rating:4.4,price:18.00,isAudioAvailable:true,pages:267,difficulty:'Beginner'),
+  MockBook(id:'138',title:'How to Win Friends and Influence People',author:'Dale Carnegie',description:'The landmark bestseller of personal growth.',genre:'Self-Help',rating:4.7,price:14.00,isAudioAvailable:true,pages:288,difficulty:'Beginner'),
+  MockBook(id:'139',title:'The Power of Habit',author:'Charles Duhigg',description:'Why we do what we do in life and business.',genre:'Self-Help',rating:4.6,price:18.00,isAudioAvailable:true,pages:371,difficulty:'Beginner'),
+  MockBook(id:'140',title:'Mindset',author:'Carol Dweck',description:'How you can fulfil your potential.',genre:'Self-Help',rating:4.6,price:17.00,isAudioAvailable:true,pages:276,difficulty:'Beginner'),
+
+  // Philosophy Extended
+  MockBook(id:'141',title:'Thus Spoke Zarathustra',author:'Friedrich Nietzsche',description:'Nietzsche\'s sweeping philosophical adventure.',genre:'Philosophy',rating:4.4,price:12.00,isAudioAvailable:false,pages:352,difficulty:'Advanced'),
+  MockBook(id:'142',title:'The Art of War',author:'Sun Tzu',description:'Ancient Chinese military strategy applicable today.',genre:'Philosophy',rating:4.6,price:9.00,isAudioAvailable:true,pages:160,difficulty:'Beginner'),
+  MockBook(id:'143',title:'Sophie\'s World',author:'Jostein Gaarder',description:'A novel about the history of philosophy.',genre:'Philosophy',rating:4.4,price:14.00,isAudioAvailable:true,pages:518,difficulty:'Beginner'),
+  MockBook(id:'144',title:'Siddhartha',author:'Hermann Hesse',description:'A spiritual journey of self-discovery.',genre:'Philosophy',rating:4.7,price:11.00,isAudioAvailable:true,pages:154,difficulty:'Beginner'),
+  MockBook(id:'145',title:'The Plague',author:'Albert Camus',description:'Existentialism through a plague-stricken Algerian town.',genre:'Philosophy',rating:4.5,price:13.00,isAudioAvailable:true,pages:308,difficulty:'Intermediate'),
+  MockBook(id:'146',title:'Letters from a Stoic',author:'Seneca',description:'Philosophical letters on how to live.',genre:'Philosophy',rating:4.7,price:11.00,isAudioAvailable:true,pages:256,difficulty:'Intermediate'),
+  MockBook(id:'147',title:'Being and Time',author:'Martin Heidegger',description:'A foundational text in existentialist philosophy.',genre:'Philosophy',rating:4.2,price:20.00,isAudioAvailable:false,pages:589,difficulty:'Advanced'),
+  MockBook(id:'148',title:'The Prince',author:'Niccolò Machiavelli',description:'A political treatise on power and leadership.',genre:'Philosophy',rating:4.4,price:10.00,isAudioAvailable:true,pages:140,difficulty:'Intermediate'),
+  MockBook(id:'149',title:'Walden',author:'Henry David Thoreau',description:'An experiment in simple living and self-reliance.',genre:'Philosophy',rating:4.3,price:11.00,isAudioAvailable:true,pages:288,difficulty:'Intermediate'),
+  MockBook(id:'150',title:'Critique of Pure Reason',author:'Immanuel Kant',description:'Exploring the nature and limits of human reason.',genre:'Philosophy',rating:4.1,price:18.00,isAudioAvailable:false,pages:716,difficulty:'Advanced'),
+
+  // Finance Extended
+  MockBook(id:'151',title:'The Millionaire Next Door',author:'Thomas Stanley',description:'The surprising secrets of America\'s wealthy.',genre:'Finance',rating:4.5,price:16.00,isAudioAvailable:true,pages:258,difficulty:'Beginner'),
+  MockBook(id:'152',title:'A Random Walk Down Wall Street',author:'Burton Malkiel',description:'The proven investment strategy for the individual investor.',genre:'Finance',rating:4.4,price:22.00,isAudioAvailable:false,pages:464,difficulty:'Intermediate'),
+  MockBook(id:'153',title:'One Up On Wall Street',author:'Peter Lynch',description:'How to use what you already know to make money in the market.',genre:'Finance',rating:4.5,price:18.00,isAudioAvailable:true,pages:318,difficulty:'Intermediate'),
+  MockBook(id:'154',title:'The Warren Buffett Way',author:'Robert Hagstrom',description:'Investment strategies of the world\'s greatest investor.',genre:'Finance',rating:4.4,price:20.00,isAudioAvailable:true,pages:273,difficulty:'Intermediate'),
+  MockBook(id:'155',title:'Common Stocks and Uncommon Profits',author:'Philip Fisher',description:'Classic investment wisdom from a legendary investor.',genre:'Finance',rating:4.5,price:18.00,isAudioAvailable:false,pages:295,difficulty:'Intermediate'),
+  MockBook(id:'156',title:'The Little Book of Common Sense Investing',author:'John Bogle',description:'The only way to guarantee your fair share of stock market returns.',genre:'Finance',rating:4.5,price:18.00,isAudioAvailable:true,pages:216,difficulty:'Beginner'),
+  MockBook(id:'157',title:'I Will Teach You to Be Rich',author:'Ramit Sethi',description:'A 6-week personal finance program for 20-to-35-year-olds.',genre:'Finance',rating:4.5,price:18.00,isAudioAvailable:true,pages:352,difficulty:'Beginner'),
+  MockBook(id:'158',title:'Antifragile',author:'Nassim Nicholas Taleb',description:'Things that gain from disorder.',genre:'Finance',rating:4.4,price:22.00,isAudioAvailable:true,pages:519,difficulty:'Advanced'),
+  MockBook(id:'159',title:'The Black Swan',author:'Nassim Nicholas Taleb',description:'The impact of the highly improbable.',genre:'Finance',rating:4.4,price:20.00,isAudioAvailable:true,pages:444,difficulty:'Advanced'),
+  MockBook(id:'160',title:'The Total Money Makeover',author:'Dave Ramsey',description:'A proven plan for financial fitness.',genre:'Finance',rating:4.6,price:17.00,isAudioAvailable:true,pages:248,difficulty:'Beginner'),
+
+  // Fiction Extended
+  MockBook(id:'161',title:'To Kill a Mockingbird',author:'Harper Lee',description:'A lawyer defends a Black man in the racially charged American South.',genre:'Fiction',rating:4.8,price:13.00,isAudioAvailable:true,pages:281,difficulty:'Beginner'),
+  MockBook(id:'162',title:'The Great Gatsby',author:'F. Scott Fitzgerald',description:'The glittering parties and empty lives of the Jazz Age.',genre:'Fiction',rating:4.5,price:11.00,isAudioAvailable:true,pages:180,difficulty:'Intermediate'),
+  MockBook(id:'163',title:'One Hundred Years of Solitude',author:'Gabriel García Márquez',description:'A multi-generational saga of the Buendía family.',genre:'Fiction',rating:4.7,price:16.00,isAudioAvailable:true,pages:417,difficulty:'Advanced'),
+  MockBook(id:'164',title:'Crime and Punishment',author:'Fyodor Dostoevsky',description:'A student commits murder and struggles with guilt.',genre:'Fiction',rating:4.7,price:14.00,isAudioAvailable:true,pages:671,difficulty:'Advanced'),
+  MockBook(id:'165',title:'Anna Karenina',author:'Leo Tolstoy',description:'Love, marriage, and society in imperial Russia.',genre:'Fiction',rating:4.7,price:15.00,isAudioAvailable:true,pages:864,difficulty:'Advanced'),
+  MockBook(id:'166',title:'The Kite Runner',author:'Khaled Hosseini',description:'A story of friendship, betrayal, and redemption in Afghanistan.',genre:'Fiction',rating:4.7,price:15.00,isAudioAvailable:true,pages:371,difficulty:'Beginner'),
+  MockBook(id:'167',title:'A Thousand Splendid Suns',author:'Khaled Hosseini',description:'Two women navigating war and marriage in Afghanistan.',genre:'Fiction',rating:4.8,price:16.00,isAudioAvailable:true,pages:372,difficulty:'Beginner'),
+  MockBook(id:'168',title:'The Book Thief',author:'Markus Zusak',description:'A girl steals books during World War II, narrated by Death.',genre:'Fiction',rating:4.8,price:15.00,isAudioAvailable:true,pages:552,difficulty:'Beginner'),
+  MockBook(id:'169',title:'Life of Pi',author:'Yann Martel',description:'A boy survives a shipwreck and shares a lifeboat with a Bengal tiger.',genre:'Fiction',rating:4.6,price:15.00,isAudioAvailable:true,pages:319,difficulty:'Beginner'),
+  MockBook(id:'170',title:'Circe',author:'Madeline Miller',description:'The story of the witch from Greek mythology.',genre:'Fiction',rating:4.7,price:18.00,isAudioAvailable:true,pages:393,difficulty:'Beginner'),
+
+  // Academic / Education
+  MockBook(id:'171',title:'Thinking Strategically',author:'Avinash Dixit',description:'The competitive edge in business, politics, and everyday life.',genre:'Academic',rating:4.4,price:20.00,isAudioAvailable:false,pages:393,difficulty:'Advanced'),
+  MockBook(id:'172',title:'The Art of Problem Solving Vol 1',author:'Sandor Lehoczky',description:'A foundational math problem-solving textbook.',genre:'Academic',rating:4.7,price:28.00,isAudioAvailable:false,pages:247,difficulty:'Advanced'),
+  MockBook(id:'173',title:'Modern Physics',author:'Paul Tipler',description:'A comprehensive modern physics textbook.',genre:'Academic',rating:4.4,price:35.00,isAudioAvailable:false,pages:672,difficulty:'Advanced'),
+  MockBook(id:'174',title:'Introduction to Algorithms',author:'Cormen et al.',description:'The definitive computer science algorithms text.',genre:'Academic',rating:4.7,price:45.00,isAudioAvailable:false,pages:1292,difficulty:'Advanced'),
+  MockBook(id:'175',title:'The Elements of Style',author:'Strunk & White',description:'The essential guide to English writing style.',genre:'Academic',rating:4.6,price:10.00,isAudioAvailable:false,pages:105,difficulty:'Beginner'),
+  MockBook(id:'176',title:'How to Read a Book',author:'Mortimer Adler',description:'The classic guide to intelligent reading.',genre:'Academic',rating:4.4,price:16.00,isAudioAvailable:true,pages:426,difficulty:'Intermediate'),
+  MockBook(id:'177',title:'The Feynman Lectures on Physics',author:'Richard Feynman',description:'Physics explained as only Feynman can.',genre:'Academic',rating:4.8,price:40.00,isAudioAvailable:false,pages:1552,difficulty:'Advanced'),
+  MockBook(id:'178',title:'Economics in One Lesson',author:'Henry Hazlitt',description:'The shortest and surest way to understand basic economics.',genre:'Academic',rating:4.5,price:16.00,isAudioAvailable:true,pages:218,difficulty:'Beginner'),
+  MockBook(id:'179',title:'A Brief History of Time',author:'Stephen Hawking',description:'From the Big Bang to Black Holes.',genre:'Academic',rating:4.6,price:16.00,isAudioAvailable:true,pages:212,difficulty:'Intermediate'),
+  MockBook(id:'180',title:'The Origin of Species',author:'Charles Darwin',description:'Darwin\'s landmark work on evolutionary biology.',genre:'Academic',rating:4.6,price:14.00,isAudioAvailable:true,pages:576,difficulty:'Advanced'),
+
+  // Leadership & Management
+  MockBook(id:'181',title:'Leaders Eat Last',author:'Simon Sinek',description:'Why some teams pull together and others don\'t.',genre:'Business',rating:4.5,price:20.00,isAudioAvailable:true,pages:368,difficulty:'Beginner'),
+  MockBook(id:'182',title:'The Innovator\'s Dilemma',author:'Clayton Christensen',description:'When new technologies cause great firms to fail.',genre:'Business',rating:4.5,price:22.00,isAudioAvailable:true,pages:288,difficulty:'Intermediate'),
+  MockBook(id:'183',title:'Start with Why',author:'Simon Sinek',description:'How great leaders inspire everyone to take action.',genre:'Business',rating:4.6,price:18.00,isAudioAvailable:true,pages:256,difficulty:'Beginner'),
+  MockBook(id:'184',title:'Measure What Matters',author:'John Doerr',description:'How Google, Bono, and the Gates Foundation rock the world with OKRs.',genre:'Business',rating:4.4,price:22.00,isAudioAvailable:true,pages:320,difficulty:'Intermediate'),
+  MockBook(id:'185',title:'No Rules Rules',author:'Reed Hastings',description:'Netflix and the culture of reinvention.',genre:'Business',rating:4.4,price:22.00,isAudioAvailable:true,pages:320,difficulty:'Beginner'),
+  MockBook(id:'186',title:'The Hard Thing About Hard Things',author:'Ben Horowitz',description:'Building a business when there are no easy answers.',genre:'Business',rating:4.6,price:22.00,isAudioAvailable:true,pages:304,difficulty:'Intermediate'),
+  MockBook(id:'187',title:'Blitzscaling',author:'Reid Hoffman',description:'The lightning-fast path to building massively valuable companies.',genre:'Business',rating:4.3,price:22.00,isAudioAvailable:true,pages:320,difficulty:'Intermediate'),
+  MockBook(id:'188',title:'Scaling Up',author:'Verne Harnish',description:'How a few companies make it and why the rest don\'t.',genre:'Business',rating:4.4,price:25.00,isAudioAvailable:false,pages:248,difficulty:'Intermediate'),
+  MockBook(id:'189',title:'The \$100 Startup',author:'Chris Guillebeau',description:'Reinvent the way you make a living.',genre:'Business',rating:4.3,price:17.00,isAudioAvailable:true,pages:336,difficulty:'Beginner'),
+  MockBook(id:'190',title:'Purple Cow',author:'Seth Godin',description:'Transform your business by being remarkable.',genre:'Business',rating:4.3,price:17.00,isAudioAvailable:true,pages:160,difficulty:'Beginner'),
+
+  // Spirituality / Indian Classics
+  MockBook(id:'191',title:'The Bhagavad Gita',author:'Various',description:'Ancient Indian scripture on duty, righteousness, and devotion.',genre:'Philosophy',rating:4.9,price:10.00,isAudioAvailable:true,pages:700,difficulty:'Intermediate'),
+  MockBook(id:'192',title:'Autobiography of a Yogi',author:'Paramahansa Yogananda',description:'The remarkable life of a spiritual master.',genre:'Philosophy',rating:4.9,price:14.00,isAudioAvailable:true,pages:412,difficulty:'Beginner'),
+  MockBook(id:'193',title:'The Alchemist (Hindi)',author:'Paulo Coelho',description:'Hindi translation of the classic spiritual adventure.',genre:'Fiction',rating:4.7,price:12.00,isAudioAvailable:true,pages:208,difficulty:'Beginner'),
+  MockBook(id:'194',title:'Chanakya Neeti',author:'Chanakya',description:'Ancient Indian wisdom on leadership and strategy.',genre:'Philosophy',rating:4.6,price:10.00,isAudioAvailable:true,pages:230,difficulty:'Beginner'),
+  MockBook(id:'195',title:'India After Gandhi',author:'Ramachandra Guha',description:'The history of the world\'s largest democracy.',genre:'History',rating:4.7,price:24.00,isAudioAvailable:true,pages:936,difficulty:'Advanced'),
+
+  // More Fiction
+  MockBook(id:'196',title:'The Namesake',author:'Jhumpa Lahiri',description:'The struggles of an Indian immigrant family in America.',genre:'Fiction',rating:4.6,price:15.00,isAudioAvailable:true,pages:291,difficulty:'Beginner'),
+  MockBook(id:'197',title:'Interpreter of Maladies',author:'Jhumpa Lahiri',description:'Short stories about the immigrant experience.',genre:'Fiction',rating:4.5,price:14.00,isAudioAvailable:true,pages:198,difficulty:'Beginner'),
+  MockBook(id:'198',title:'The White Tiger',author:'Aravind Adiga',description:'A rise from servant to entrepreneur in modern India.',genre:'Fiction',rating:4.4,price:15.00,isAudioAvailable:true,pages:321,difficulty:'Beginner'),
+  MockBook(id:'199',title:'Midnight\'s Children',author:'Salman Rushdie',description:'India\'s birth as a sovereign nation through a magical realist lens.',genre:'Fiction',rating:4.5,price:18.00,isAudioAvailable:true,pages:533,difficulty:'Advanced'),
+  MockBook(id:'200',title:'The God of Small Things',author:'Arundhati Roy',description:'A family tragedy in Kerala, told in fractured chronology.',genre:'Fiction',rating:4.5,price:15.00,isAudioAvailable:true,pages:321,difficulty:'Intermediate'),
+];

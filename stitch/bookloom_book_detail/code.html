@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BookLoom | The Digital Atelier</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#e8e8e5",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#bdc2ff",
+                        "on-surface": "#1a1c1b",
+                        "primary-fixed": "#dfe0ff",
+                        "on-primary-fixed": "#000965",
+                        "tertiary-container": "#aa5f00",
+                        "surface-variant": "#e2e3e0",
+                        "on-error-container": "#93000a",
+                        "surface": "#f9f9f6",
+                        "outline": "#767684",
+                        "surface-container-low": "#f4f4f1",
+                        "surface-container-highest": "#e2e3e0",
+                        "on-secondary-fixed": "#201b12",
+                        "error": "#ba1a1a",
+                        "tertiary": "#874a00",
+                        "on-tertiary-fixed": "#2e1500",
+                        "primary-container": "#5a67d8",
+                        "on-tertiary-container": "#fff6f2",
+                        "surface-bright": "#f9f9f6",
+                        "on-secondary-container": "#6b6358",
+                        "on-secondary-fixed-variant": "#4c463b",
+                        "inverse-on-surface": "#f1f1ee",
+                        "secondary": "#655d52",
+                        "inverse-surface": "#2f312f",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#1a1c1b",
+                        "primary": "#404dbe",
+                        "outline-variant": "#c6c5d5",
+                        "on-tertiary-fixed-variant": "#6c3a00",
+                        "on-surface-variant": "#454653",
+                        "secondary-fixed-dim": "#cfc5b7",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#dadad7",
+                        "surface-container": "#eeeeeb",
+                        "secondary-fixed": "#ece1d2",
+                        "background": "#f9f9f6",
+                        "inverse-primary": "#bdc2ff",
+                        "secondary-container": "#ece1d2",
+                        "surface-tint": "#4552c3",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#ffdcc1",
+                        "tertiary-fixed-dim": "#ffb778",
+                        "on-primary-container": "#faf7ff",
+                        "on-primary-fixed-variant": "#2b38aa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f9f9f6; color: #1a1c1b; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .ease-out-quint { transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-sm shadow-stone-200/50">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto font-manrope tracking-tight">
+<div class="text-2xl font-bold tracking-tighter text-indigo-800 dark:text-indigo-300">BookLoom</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-indigo-700 dark:text-indigo-400 font-semibold border-b-2 border-indigo-600 hover:opacity-80 transition-opacity duration-300" href="#">Shop</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-indigo-600 hover:opacity-80 transition-opacity duration-300" href="#">Categories</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-indigo-600 hover:opacity-80 transition-opacity duration-300" href="#">Editorial</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-indigo-600 hover:opacity-80 transition-opacity duration-300" href="#">New Arrivals</a>
+</div>
+<div class="flex items-center gap-6 text-indigo-700 dark:text-indigo-400">
+<button class="material-symbols-outlined hover:opacity-80 transition-opacity scale-95 duration-200 ease-out-quint">shopping_cart</button>
+<button class="material-symbols-outlined hover:opacity-80 transition-opacity scale-95 duration-200 ease-out-quint">person</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 max-w-screen-2xl mx-auto px-8">
+<!-- Breadcrumb & Back Action -->
+<div class="mb-12 flex items-center gap-2 text-on-surface-variant font-label text-sm uppercase tracking-widest">
+<span>Shop</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span>Contemporary Fiction</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-on-surface">The Architecture of Light</span>
+</div>
+<!-- Hero: Book Detail Section -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+<!-- Left: Book Image with Asymmetric Layout -->
+<div class="lg:col-span-6 relative">
+<div class="aspect-[3/4] rounded-xl overflow-hidden bg-surface-container shadow-2xl">
+<img class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" data-alt="high-quality editorial book cover featuring abstract minimalist blue shapes and elegant gold leaf typography titled Architecture of Light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDu8nj0D0bwsP6gyD-P93Q1NwToxrrXEywOBzEcRNHerSUYuTP3wlxBlrEreiyhm2ibvUYWpBLFl3fjO4yEhBRfO1FHXx6s6U1yzwI-YjPCGh0t12UOHGQO6i_Zv_1SAn2EJfVNCOLw9rpQwCCUawg4ayMWCJ3TQtq8G_sJ52ssQnDk5iIngcc-c3HCocYbSP_WCTvc9xOfwP3yIYNVgouVJiB6pJ7Ejfc21yMaiKLRMyh7ZIENa7czfCqx9BjbqPbdsT4sEa-iq1x"/>
+</div>
+<!-- Artistic Floating Badge -->
+<div class="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary-container rounded-full flex items-center justify-center p-4 text-center transform rotate-12 shadow-lg">
+<span class="font-headline text-xs font-bold text-on-secondary-container leading-tight">EDITOR'S CHOICE 2024</span>
+</div>
+</div>
+<!-- Right: Book Metadata & CTAs -->
+<div class="lg:col-span-6 flex flex-col pt-4">
+<h1 class="font-headline text-5xl md:text-6xl font-extrabold tracking-tighter leading-none mb-4 text-on-surface">
+                    The Architecture of Light
+                </h1>
+<p class="font-headline text-xl text-indigo-700 mb-6 font-medium">by Julian Thorne</p>
+<div class="flex items-center gap-4 mb-8">
+<div class="flex items-center text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0.5;">star_half</span>
+</div>
+<span class="text-on-surface-variant font-label text-sm">(4.8 / 124 reviews)</span>
+</div>
+<div class="mb-10">
+<span class="text-4xl font-headline font-bold text-on-surface">$34.00</span>
+<span class="ml-4 text-on-surface-variant line-through">$42.00</span>
+<div class="mt-2 text-xs font-bold text-indigo-600 bg-primary-fixed/30 inline-block px-3 py-1 rounded-full uppercase tracking-tighter">Limited First Edition Hardcover</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 mb-12">
+<button class="flex-1 bg-primary text-on-primary py-5 rounded-full font-headline font-bold text-lg hover:opacity-90 transition-opacity ease-out-quint transform active:scale-95 bg-gradient-to-br from-primary to-primary-container">
+                        Add to Cart
+                    </button>
+<button class="flex-1 bg-secondary-container text-on-secondary-fixed py-5 rounded-full font-headline font-bold text-lg hover:bg-surface-container-high transition-colors ease-out-quint transform active:scale-95">
+                        Buy Now
+                    </button>
+</div>
+<div class="grid grid-cols-2 gap-8 border-t border-outline-variant/15 pt-8">
+<div>
+<span class="block text-xs font-label text-on-surface-variant uppercase tracking-widest mb-1">Format</span>
+<span class="font-medium text-on-surface">Hardcover (Linen bound)</span>
+</div>
+<div>
+<span class="block text-xs font-label text-on-surface-variant uppercase tracking-widest mb-1">Pages</span>
+<span class="font-medium text-on-surface">342 Pages</span>
+</div>
+<div>
+<span class="block text-xs font-label text-on-surface-variant uppercase tracking-widest mb-1">Language</span>
+<span class="font-medium text-on-surface">English</span>
+</div>
+<div>
+<span class="block text-xs font-label text-on-surface-variant uppercase tracking-widest mb-1">Publisher</span>
+<span class="font-medium text-on-surface">Loom Atelier Press</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Mid-Page Content: Description & Reviews -->
+<section class="mt-32 grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Left: Description (Editorial Style) -->
+<div class="lg:col-span-7">
+<h3 class="font-headline text-3xl font-bold tracking-tight mb-8">The Narrative</h3>
+<div class="space-y-6 text-on-surface-variant leading-relaxed text-lg font-body">
+<p>In his most ambitious work yet, Julian Thorne explores the intersections of physical space and emotional resonance. <span class="text-on-surface font-semibold">The Architecture of Light</span> is not just a story; it's a sensory journey through the streets of a reimagined Venice, where every corner holds a shadow of a forgotten history.</p>
+<p>The protagonist, an aging architect tasked with restoring a cathedral of glass, finds himself entangled in a mystery that spans three centuries. Thorne's prose is tactile, shimmering with the same luminosity he describes in the book's central monument.</p>
+<blockquote class="border-l-4 border-indigo-600 pl-8 my-10 italic text-2xl font-headline text-on-surface">
+                        "A masterwork of contemporary fiction that redefines the boundaries of descriptive storytelling."
+                        <footer class="mt-4 text-sm font-label uppercase tracking-widest not-italic">— The Paris Review</footer>
+</blockquote>
+</div>
+</div>
+<!-- Right: Customer Reviews (Tonal Layering) -->
+<div class="lg:col-span-5 bg-surface-container-low p-10 rounded-3xl">
+<h3 class="font-headline text-2xl font-bold tracking-tight mb-8">Reader Reflections</h3>
+<div class="space-y-8">
+<!-- Review Item 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="font-bold text-on-surface">Elena G.</p>
+<p class="text-xs text-on-surface-variant font-label">Verified Collector</p>
+</div>
+<div class="flex text-tertiary scale-75">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed italic">"The tactile quality of this book—from the linen cover to the heavy paper stock—matches the weight of Thorne's incredible writing."</p>
+</div>
+<!-- Review Item 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="font-bold text-on-surface">Marcus Thorne</p>
+<p class="text-xs text-on-surface-variant font-label">Literary Critic</p>
+</div>
+<div class="flex text-tertiary scale-75">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">star</span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed italic">"Technically brilliant. A slow burn that pays off in ways I didn't expect. Highly recommend for quiet weekends."</p>
+</div>
+</div>
+<button class="mt-8 text-primary font-bold text-sm uppercase tracking-widest flex items-center gap-2 hover:opacity-70 transition-opacity">
+                    View All 124 Reviews <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- Signature Component: Similar Books Grid -->
+<section class="mt-40">
+<div class="flex justify-between items-end mb-12">
+<div class="max-w-xl">
+<h2 class="font-headline text-4xl font-bold tracking-tighter mb-4 text-on-surface">Resonating Works</h2>
+<p class="text-on-surface-variant font-body">If the light in Thorne's world spoke to you, these curated volumes will deepen the dialogue.</p>
+</div>
+<div class="hidden md:flex gap-4">
+<button class="w-12 h-12 rounded-full flex items-center justify-center bg-surface-container-high text-on-surface hover:bg-primary hover:text-on-primary transition-all duration-300">
+<span class="material-symbols-outlined">west</span>
+</button>
+<button class="w-12 h-12 rounded-full flex items-center justify-center bg-surface-container-high text-on-surface hover:bg-primary hover:text-on-primary transition-all duration-300">
+<span class="material-symbols-outlined">east</span>
+</button>
+</div>
+</div>
+<!-- Grid with Asymmetric Spacing/Sizing -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12">
+<!-- Book Card 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] rounded-xl overflow-hidden mb-6 bg-surface-container shadow-sm">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="aesthetic book cover of a classical novel with elegant gold leaf details on a dark green background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABfP1qFV51RGVFCK_xOc7pY8MWA-zFBh5AeT6NG-pwa13QLJQT4Uxm_T9HaddFHNFuc2cRyBZ7E7rjaJRFwUWq7--810DNQq5Dse0n1VsGSA9m5p-BFL4w-mBgCO0_d4tJ_3KK_Mv3f9BwZF9_99NhMbr2gqPEjSxG67FUg3Y8TauORBE14kPeI_quC1efAnwRECiUb6Q39b_oRi28RW6aKSkKGRZpY7tZPBK9xH-6fw414qg1WWTqYlN0vjpwcjROfRhrGN9Le675"/>
+</div>
+<h4 class="font-headline font-bold text-lg mb-1 group-hover:text-primary transition-colors">The Emerald Isle</h4>
+<p class="text-sm text-on-surface-variant font-label">Clara Montague</p>
+<p class="mt-3 font-bold text-on-surface">$28.00</p>
+</div>
+<!-- Book Card 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] rounded-xl overflow-hidden mb-6 bg-surface-container shadow-sm">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="modern minimalist book cover featuring a single geometric orange circle on a white background with clean black typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqR3nG13icNYE9ckmcnOZYHUs2jgwVt-AScMhq4sW1eGb6WcdwdXPh2hmSiTn63RS7QhUYpdfVgHCTdbVAc35BuXv2YkKoqdWDLObMh-wpowTqVtiw3lK0027ATsFqjs_sAT5HUgVw5P818iXdQtq9MO90mFPIrKp7Jsfc4xFwGRETYSUVZUWwWr5KAujBzKrYLRzDz-GN44mKzeAnvg_4tAsrulcukrb1rTcR892dfDkT33RRASxRx2R5cBH5fZfvZk78384OX0ES"/>
+</div>
+<h4 class="font-headline font-bold text-lg mb-1 group-hover:text-primary transition-colors">Geometric Solace</h4>
+<p class="text-sm text-on-surface-variant font-label">Aiden Voss</p>
+<p class="mt-3 font-bold text-on-surface">$24.00</p>
+</div>
+<!-- Book Card 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] rounded-xl overflow-hidden mb-6 bg-surface-container shadow-sm">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="vintage aesthetic book cover with detailed floral illustrations and serif typography on cream colored paper" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuGutK1Xlz045_-CDQSB2A6DmxZmNJDMV4pChaPP7Kf2iC-cwWNsEfr0hFY5ZMokb5yBbcHfZq4cqAyPHoognkyybHGx9Gp934WzT7ZRsqfmQFsDvFm-3ZH1G32F_FiyuGnyF3jBGASgdQs5wJRllaZDjjnY0kbUeK6zfgzVXRUHxQoJGz4Kgod049GX2ZNgEmqnVeUbNghtg0zOew8XM1ECsz8GJj-ocwRjSXiXRX115BKOofzJlR7_qAqA7boKDWZIVnEkU89Eur"/>
+</div>
+<h4 class="font-headline font-bold text-lg mb-1 group-hover:text-primary transition-colors">Botanical Echoes</h4>
+<p class="text-sm text-on-surface-variant font-label">Sarah Bloom</p>
+<p class="mt-3 font-bold text-on-surface">$31.00</p>
+</div>
+<!-- Book Card 4 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] rounded-xl overflow-hidden mb-6 bg-surface-container shadow-sm">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="moody book cover with atmospheric fog and mountain landscape photography under soft blue light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLnYPMVtldiMto6p-EzNXQ5NcEa7r5kfHvMaBM3WJhftsPz85lY0fmB7F8JZQmgxY9bs2nlPmaXXY8Z6K0P7Rf7RbdKxsc3KPFwoXzkohB7g9hQRv8E-TRvY_DIiJpMPDiRf3QwNdtmeTqkds-PruLbRBQPWiLF63toD9KqdkM4ghzF0shB5uaB44WEPTHWSLTdJJ-uFj-AEKYvLoUgHQWvYmM4msDLp4W6nnU31xJBTIxAzW6EcyLeTpmEaHirur-TkFQ9H3zyP_D"/>
+</div>
+<h4 class="font-headline font-bold text-lg mb-1 group-hover:text-primary transition-colors">Whisper in the Peak</h4>
+<p class="text-sm text-on-surface-variant font-label">T.E. Lawrence</p>
+<p class="mt-3 font-bold text-on-surface">$26.50</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-3xl bg-stone-100 dark:bg-stone-900 mt-24">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full gap-8 max-w-screen-2xl mx-auto font-inter text-sm uppercase tracking-widest">
+<div class="text-lg font-bold text-stone-800 dark:text-stone-200">BookLoom</div>
+<div class="flex flex-wrap justify-center gap-8 text-stone-500 dark:text-stone-400">
+<a class="hover:text-indigo-500 transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-indigo-500 transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-indigo-500 transition-colors" href="#">Shipping &amp; Returns</a>
+<a class="hover:text-indigo-500 transition-colors" href="#">Contact Us</a>
+</div>
+<div class="text-stone-500 dark:text-stone-400 text-center md:text-right">
+                © 2024 BookLoom Atelier. Curated with intention.
+            </div>
+</div>
+</footer>
+</body></html>

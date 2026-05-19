@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>BookLoom | AI Librarian</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#6c3a00",
+                    "tertiary-fixed": "#ffdcc1",
+                    "on-primary-fixed-variant": "#2b38aa",
+                    "surface-variant": "#e2e3e0",
+                    "surface-container": "#eeeeeb",
+                    "surface-tint": "#4552c3",
+                    "on-primary-container": "#faf7ff",
+                    "primary-fixed-dim": "#bdc2ff",
+                    "tertiary": "#874a00",
+                    "outline-variant": "#c6c5d5",
+                    "primary": "#404dbe",
+                    "background": "#f9f9f6",
+                    "on-error": "#ffffff",
+                    "tertiary-container": "#aa5f00",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f4f4f1",
+                    "secondary-fixed-dim": "#cfc5b7",
+                    "on-tertiary-fixed": "#2e1500",
+                    "inverse-primary": "#bdc2ff",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#e2e3e0",
+                    "surface-bright": "#f9f9f6",
+                    "primary-container": "#5a67d8",
+                    "primary-fixed": "#dfe0ff",
+                    "inverse-on-surface": "#f1f1ee",
+                    "outline": "#767684",
+                    "on-surface-variant": "#454653",
+                    "on-secondary-fixed-variant": "#4c463b",
+                    "on-surface": "#1a1c1b",
+                    "on-secondary-fixed": "#201b12",
+                    "on-tertiary-container": "#fff6f2",
+                    "surface-dim": "#dadad7",
+                    "on-primary-fixed": "#000965",
+                    "inverse-surface": "#2f312f",
+                    "tertiary-fixed-dim": "#ffb778",
+                    "on-secondary-container": "#6b6358",
+                    "surface": "#f9f9f6",
+                    "secondary-container": "#ece1d2",
+                    "secondary": "#655d52",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1a1c1b",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#ece1d2",
+                    "surface-container-high": "#e8e8e5",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ease-out-quint {
+            transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .scale-98-on-click:active {
+            transform: scale(0.98);
+        }
+        .scale-95-on-click:active {
+            transform: scale(0.95);
+        }
+        body {
+            background-color: #f9f9f6;
+            color: #1a1c1b;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-surface/80 dark:bg-slate-900/80 backdrop-blur-xl">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-slate-100/50 transition-colors scale-98-on-click duration-300 ease-out-quint">
+<span class="material-symbols-outlined text-slate-500" data-icon="menu">menu</span>
+</button>
+<h1 class="font-manrope font-bold tracking-tight text-xl text-indigo-700">BookLoom</h1>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="close-up portrait of a woman with a kind smile in soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLcEgL37MDjXdBTSbJESoeO08ZOKbGful5k6eOXsQvJ48K65tjpwbjVHYMnbrkbY4LXnF6TajBHvA0FgKIQluSr9F-aadF3Tsz9BzH0A4goHdXIsVBqhz_vfbLz1K-yIg7Tilfc7YaTuJoAJr6gBaNrxgl-KYsVHApNqMAOVFjHSZQNQperDbCLVAMR1yyWZQr5IL7umOfLbHZSRG-A1by73-cxSuV-pAXa2D17xVnx46-w7vIRX0vdVxZZ-Psj6fsxWl1zRPfMjgT"/>
+</div>
+</div>
+</header>
+<!-- Chat Canvas -->
+<main class="flex-1 mt-20 mb-32 px-4 md:px-8 max-w-3xl mx-auto w-full flex flex-col gap-8">
+<!-- AI Introduction Section -->
+<div class="flex flex-col items-center text-center py-10 space-y-4">
+<div class="w-16 h-16 bg-primary-container rounded-3xl flex items-center justify-center text-on-primary shadow-sm">
+<span class="material-symbols-outlined text-3xl" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<h2 class="font-headline font-extrabold text-3xl tracking-tight text-on-surface">Your Personal Librarian</h2>
+<p class="font-body text-on-surface-variant max-w-xs leading-relaxed text-sm">Find your next favorite story. I’ve read everything, so you don't have to.</p>
+</div>
+<!-- Chat History -->
+<div class="space-y-6">
+<!-- AI Message -->
+<div class="flex flex-col items-start max-w-[85%]">
+<div class="bg-surface-container-lowest text-on-surface p-4 rounded-t-2xl rounded-br-2xl rounded-bl-lg shadow-sm border border-outline-variant/10">
+<p class="font-body text-sm leading-relaxed">Hello! I'm here to help you navigate our digital atelier. What kind of atmosphere are you looking for in a book today?</p>
+</div>
+<span class="text-[10px] font-label text-outline mt-1 px-1 uppercase tracking-widest">Librarian • 10:24 AM</span>
+</div>
+<!-- User Message -->
+<div class="flex flex-col items-end max-w-[85%] ml-auto">
+<div class="bg-primary text-on-primary p-4 rounded-t-2xl rounded-bl-2xl rounded-br-lg shadow-sm">
+<p class="font-body text-sm leading-relaxed">I want something magical but grounded, like a modern myth.</p>
+</div>
+<span class="text-[10px] font-label text-outline mt-1 px-1 uppercase tracking-widest">You • 10:25 AM</span>
+</div>
+<!-- AI Recommendation Layout (Editorial Pattern) -->
+<div class="flex flex-col items-start w-full gap-4">
+<div class="bg-surface-container-lowest text-on-surface p-4 rounded-t-2xl rounded-br-2xl rounded-bl-lg shadow-sm border border-outline-variant/10 w-full">
+<p class="font-body text-sm leading-relaxed mb-4">Based on that, I highly recommend <span class="font-semibold text-primary">"The Starless Sea"</span> by Erin Morgenstern. It's a love letter to stories themselves.</p>
+<!-- Book Card -->
+<div class="flex gap-4 bg-surface-container-low p-3 rounded-xl">
+<div class="w-20 h-28 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Book Cover" class="w-full h-full object-cover" data-alt="Elegant book cover with gold foil celestial patterns on a deep blue background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA62wJAfDW5WwstmoLTw5VpXEVVwFiXIjnyxX9XWODeywTCxQFehw2dtk3ChpsimQhNgdwfsN7snWW-ZU9UR5Km4AKBCQGPHBb_KBpTNb8a-jexzg0KLoMvJneRYhHG6GBI192cprSfZIRUplfG7vIBdvROHeTqURxe2PgsVq17Fq3T1cvtKiFtFgvgEb8slTXHv15VlgSgDLp6Hbs92mFACKnyIUDUlq-tO7tgF79UtsR_9lMggds0dGHOPOsbrbvriaDdy3K4bn2o"/>
+</div>
+<div class="flex flex-col justify-center">
+<h4 class="font-headline font-bold text-on-surface text-base">The Starless Sea</h4>
+<p class="font-body text-on-surface-variant text-xs">Erin Morgenstern</p>
+<div class="mt-2 flex items-center gap-2">
+<span class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Mythic</span>
+<span class="bg-secondary-container/50 text-on-secondary-container text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Fantasy</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Reply Chips -->
+<div class="flex flex-wrap gap-2 pt-4">
+<button class="bg-surface-container-highest/50 hover:bg-surface-container-highest transition-colors text-on-surface-variant px-4 py-2 rounded-full text-xs font-medium border border-outline-variant/20 scale-95-on-click">
+                Recommend a classic
+            </button>
+<button class="bg-surface-container-highest/50 hover:bg-surface-container-highest transition-colors text-on-surface-variant px-4 py-2 rounded-full text-xs font-medium border border-outline-variant/20 scale-95-on-click">
+                Find a book like Circe
+            </button>
+<button class="bg-surface-container-highest/50 hover:bg-surface-container-highest transition-colors text-on-surface-variant px-4 py-2 rounded-full text-xs font-medium border border-outline-variant/20 scale-95-on-click">
+                Summer beach reads
+            </button>
+</div>
+</main>
+<!-- Message Input Bar (Floating) -->
+<div class="fixed bottom-24 left-0 w-full px-4 md:px-8 z-40 max-w-3xl mx-auto right-0">
+<div class="bg-surface-container-lowest/90 backdrop-blur-xl p-2 rounded-2xl flex items-center gap-2 shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-outline-variant/10">
+<button class="w-10 h-10 flex items-center justify-center text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+</button>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-sm font-body text-on-surface placeholder:text-outline/60" placeholder="Ask your librarian..." type="text"/>
+<button class="w-10 h-10 bg-primary text-on-primary rounded-xl flex items-center justify-center shadow-md scale-95-on-click ease-out-quint">
+<span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</div>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-6 bg-surface/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-t-3xl shadow-[0_-10px_40px_rgba(26,28,27,0.05)]">
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-indigo-500 transition-all scale-95-on-click">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-manrope font-medium text-[11px] uppercase tracking-widest mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-indigo-500 transition-all scale-95-on-click">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-manrope font-medium text-[11px] uppercase tracking-widest mt-1">Search</span>
+</div>
+<!-- Active FAB Tab -->
+<div class="flex flex-col items-center justify-center text-indigo-700 dark:text-indigo-300 bg-indigo-50/50 dark:bg-indigo-900/20 rounded-xl px-3 py-1 scale-95-on-click">
+<span class="material-symbols-outlined" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-manrope font-medium text-[11px] uppercase tracking-widest mt-1">AI Chat</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-indigo-500 transition-all scale-95-on-click">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-manrope font-medium text-[11px] uppercase tracking-widest mt-1">Cart</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-indigo-500 transition-all scale-95-on-click">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-manrope font-medium text-[11px] uppercase tracking-widest mt-1">Profile</span>
+</div>
+</nav>
+</body></html>

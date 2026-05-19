@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout | BookLoom</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#e8e8e5",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#bdc2ff",
+                    "on-surface": "#1a1c1b",
+                    "primary-fixed": "#dfe0ff",
+                    "on-primary-fixed": "#000965",
+                    "tertiary-container": "#aa5f00",
+                    "surface-variant": "#e2e3e0",
+                    "on-error-container": "#93000a",
+                    "surface": "#f9f9f6",
+                    "outline": "#767684",
+                    "surface-container-low": "#f4f4f1",
+                    "surface-container-highest": "#e2e3e0",
+                    "on-secondary-fixed": "#201b12",
+                    "error": "#ba1a1a",
+                    "tertiary": "#874a00",
+                    "on-tertiary-fixed": "#2e1500",
+                    "primary-container": "#5a67d8",
+                    "on-tertiary-container": "#fff6f2",
+                    "surface-bright": "#f9f9f6",
+                    "on-secondary-container": "#6b6358",
+                    "on-secondary-fixed-variant": "#4c463b",
+                    "inverse-on-surface": "#f1f1ee",
+                    "secondary": "#655d52",
+                    "inverse-surface": "#2f312f",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#1a1c1b",
+                    "primary": "#404dbe",
+                    "outline-variant": "#c6c5d5",
+                    "on-tertiary-fixed-variant": "#6c3a00",
+                    "on-surface-variant": "#454653",
+                    "secondary-fixed-dim": "#cfc5b7",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#dadad7",
+                    "surface-container": "#eeeeeb",
+                    "secondary-fixed": "#ece1d2",
+                    "background": "#f9f9f6",
+                    "inverse-primary": "#bdc2ff",
+                    "secondary-container": "#ece1d2",
+                    "surface-tint": "#4552c3",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#ffdcc1",
+                    "tertiary-fixed-dim": "#ffb778",
+                    "on-primary-container": "#faf7ff",
+                    "on-primary-fixed-variant": "#2b38aa"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ease-out-quint {
+            transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar: Execution of JSON style_ keys -->
+<nav class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-sm shadow-stone-200/50 dark:shadow-none">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto font-manrope tracking-tight">
+<div class="text-2xl font-bold tracking-tighter text-indigo-800 dark:text-indigo-300">
+                BookLoom
+            </div>
+<!-- Contextual Note: Navigation links are hidden for checkout focus to prioritize the task-focused canvas -->
+<div class="hidden md:flex items-center gap-6">
+<a class="text-stone-500 hover:text-indigo-600 transition-opacity duration-300" href="#">Return to Shop</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-stone-600 hover:opacity-80 transition-opacity duration-300">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
+<div class="flex flex-col lg:flex-row gap-16">
+<!-- Checkout Form Section -->
+<div class="flex-1">
+<!-- Progress Indicator -->
+<div class="mb-12">
+<div class="flex items-center justify-between max-w-md">
+<div class="flex flex-col items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="text-xs font-semibold tracking-widest uppercase text-primary">Shipping</span>
+</div>
+<div class="h-px flex-1 bg-outline-variant mx-4 mt-[-20px]"></div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-10 h-10 rounded-full border-2 border-outline-variant flex items-center justify-center text-on-surface-variant bg-surface">
+<span class="text-sm font-bold">2</span>
+</div>
+<span class="text-xs font-semibold tracking-widest uppercase text-on-surface-variant">Payment</span>
+</div>
+<div class="h-px flex-1 bg-outline-variant mx-4 mt-[-20px]"></div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-10 h-10 rounded-full border-2 border-outline-variant flex items-center justify-center text-on-surface-variant bg-surface">
+<span class="text-sm font-bold">3</span>
+</div>
+<span class="text-xs font-semibold tracking-widest uppercase text-on-surface-variant">Review</span>
+</div>
+</div>
+</div>
+<header class="mb-10">
+<h1 class="font-headline text-4xl font-bold tracking-tight text-on-surface mb-2">Shipping Details</h1>
+<p class="text-on-surface-variant max-w-md">Enter your information carefully to ensure your collection arrives safely at your doorstep.</p>
+</header>
+<!-- Form -->
+<form class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block text-sm font-medium text-on-surface-variant ml-1">First Name</label>
+<input class="w-full px-5 py-4 rounded-xl bg-surface-container-highest border-none focus:ring-2 focus:ring-primary/20 transition-all duration-300 outline-none" placeholder="Julian" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-medium text-on-surface-variant ml-1">Last Name</label>
+<input class="w-full px-5 py-4 rounded-xl bg-surface-container-highest border-none focus:ring-2 focus:ring-primary/20 transition-all duration-300 outline-none" placeholder="Barnes" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-medium text-on-surface-variant ml-1">Email Address</label>
+<input class="w-full px-5 py-4 rounded-xl bg-surface-container-highest border-none focus:ring-2 focus:ring-primary/20 transition-all duration-300 outline-none" placeholder="julian@atelier.com" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-medium text-on-surface-variant ml-1">Shipping Address</label>
+<input class="w-full px-5 py-4 rounded-xl bg-surface-container-highest border-none focus:ring-2 focus:ring-primary/20 transition-all duration-300 outline-none" placeholder="128 Curated Lane" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-1 space-y-2">
+<label class="block text-sm font-medium text-on-surface-variant ml-1">City</label>
+<input class="w-full px-5 py-4 rounded-xl bg-surface-container-highest border-none focus:ring-2 focus:ring-primary/20 transition-all duration-300 outline-none" placeholder="London" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-medium text-on-surface-variant ml-1">Postal Code</label>
+<input class="w-full px-5 py-4 rounded-xl bg-surface-container-highest border-none focus:ring-2 focus:ring-primary/20 transition-all duration-300 outline-none" placeholder="EC1A 1BB" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block text-sm font-medium text-on-surface-variant ml-1">Country</label>
+<select class="w-full px-5 py-4 rounded-xl bg-surface-container-highest border-none focus:ring-2 focus:ring-primary/20 transition-all duration-300 outline-none appearance-none">
+<option>United Kingdom</option>
+<option>United States</option>
+<option>France</option>
+<option>Japan</option>
+</select>
+</div>
+</div>
+<div class="pt-6">
+<button class="group relative flex items-center justify-center w-full md:w-auto px-10 py-4 bg-primary text-on-primary rounded-full font-semibold tracking-wide overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg shadow-primary/20" type="button">
+<span>Continue to Payment</span>
+<span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Order Summary Sidebar -->
+<aside class="w-full lg:w-[420px]">
+<div class="sticky top-32 p-8 rounded-3xl bg-surface-container-low">
+<h2 class="font-headline text-xl font-bold mb-8 flex items-center gap-3">
+<span class="material-symbols-outlined text-indigo-600">auto_stories</span>
+                        Your Collection
+                    </h2>
+<div class="space-y-6 mb-8">
+<!-- Book Item 1 -->
+<div class="flex gap-4 group">
+<div class="relative w-20 h-28 flex-shrink-0 overflow-hidden rounded-lg bg-stone-200">
+<img alt="Minimalist book cover" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="close-up of a minimalist cream-colored book cover with elegant serif typography on a textured paper surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-PqoB4M8EbHOGho_MbaMauqBsWdQzS8C38HQwqH8juggINyMH18kQmcNS4RcmDApzBiHjjVmQMUoHnal7S1yNaN_Shg2SOuqvdcLeUkqRSBJHJa6__avAt--3rI5GIXFuHSvXQnlPKSGsozeFf4t23-fZtIy-9TGE6c_ozAe0km7brH8VoSYJYIYsTPCetPMfv8hxzKai_1T4xXOhhi6l2gRji_EAZR8YXS8g3s4nsVeQxyvC90kxIkpIqHfOXbWY-s373jZke0UD"/>
+</div>
+<div class="flex flex-col justify-between py-1">
+<div>
+<h3 class="font-headline font-semibold text-on-surface leading-tight">The Art of Stillness</h3>
+<p class="text-xs text-on-surface-variant mt-1">Pico Iyer • Hardcover</p>
+</div>
+<span class="font-semibold text-primary">$28.00</span>
+</div>
+</div>
+<!-- Book Item 2 -->
+<div class="flex gap-4 group">
+<div class="relative w-20 h-28 flex-shrink-0 overflow-hidden rounded-lg bg-stone-200">
+<img alt="Vintage book spine" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="atmospheric photo of a classic linen-bound book spine with gold foil lettering in soft library lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB20E-dZgVicKhyiFKwHs2s1A0uMqd_eOZ_dcuF0Ra-3JC0_e1cASe0em11RJminyvmEOxGNmdNh9s4FaXF8if1P1gz--ayyAUufLYQ-qLM2aqSfRLFfmOHYxlyE8Z6BSceQE8NSKTZYZ1cIILrtN5qlbPdmqy5ULY2UM0xm5yrJ0fW6O91AiQHtaaQJZENuonV9lLV6tr3lpQAjWwGcKrvGsupVxj4OaRzpSOFSma8b-yXFz7jQ4NQRvLukt0XxGJT_Ra2WzvHMYVS"/>
+</div>
+<div class="flex flex-col justify-between py-1">
+<div>
+<h3 class="font-headline font-semibold text-on-surface leading-tight">A Moveable Feast</h3>
+<p class="text-xs text-on-surface-variant mt-1">Ernest Hemingway • Special Edition</p>
+</div>
+<span class="font-semibold text-primary">$42.00</span>
+</div>
+</div>
+</div>
+<!-- Totals -->
+<div class="space-y-4 pt-8 border-t border-outline-variant/30">
+<div class="flex justify-between text-sm text-on-surface-variant">
+<span>Subtotal</span>
+<span class="font-medium text-on-surface">$70.00</span>
+</div>
+<div class="flex justify-between text-sm text-on-surface-variant">
+<span>Boutique Shipping</span>
+<span class="font-medium text-on-surface">$12.00</span>
+</div>
+<div class="flex justify-between text-lg font-bold pt-4 text-on-surface">
+<span>Total</span>
+<span class="text-indigo-700">$82.00</span>
+</div>
+</div>
+<!-- Assurance -->
+<div class="mt-8 flex items-center gap-3 p-4 bg-surface rounded-2xl">
+<span class="material-symbols-outlined text-green-600 text-xl" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+                            Every BookLoom order is hand-inspected and wrapped in acid-free archival tissue.
+                        </p>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer: Execution of JSON style_ keys -->
+<footer class="w-full rounded-t-3xl bg-stone-100 dark:bg-stone-900">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full gap-8">
+<div class="text-lg font-bold text-stone-800 dark:text-stone-200">
+                BookLoom
+            </div>
+<div class="flex flex-wrap justify-center gap-8 font-inter text-sm uppercase tracking-widest">
+<a class="text-stone-500 dark:text-stone-400 hover:text-indigo-500 transition-colors" href="#">Privacy Policy</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-indigo-500 transition-colors" href="#">Terms of Service</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-indigo-500 transition-colors" href="#">Shipping &amp; Returns</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-indigo-500 transition-colors" href="#">Contact Us</a>
+</div>
+<div class="text-stone-500 dark:text-stone-400 text-xs font-inter uppercase tracking-widest">
+                © 2024 BookLoom Atelier. Curated with intention.
+            </div>
+</div>
+</footer>
+</body></html>

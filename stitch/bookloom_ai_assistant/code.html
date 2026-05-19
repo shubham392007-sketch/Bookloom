@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BookLoom | AI Assistant</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface-container-high": "#e8e8e5",
+                "on-primary": "#ffffff",
+                "surface-container-lowest": "#ffffff",
+                "primary-fixed-dim": "#bdc2ff",
+                "on-surface": "#1a1c1b",
+                "primary-fixed": "#dfe0ff",
+                "on-primary-fixed": "#000965",
+                "tertiary-container": "#aa5f00",
+                "surface-variant": "#e2e3e0",
+                "on-error-container": "#93000a",
+                "surface": "#f9f9f6",
+                "outline": "#767684",
+                "surface-container-low": "#f4f4f1",
+                "surface-container-highest": "#e2e3e0",
+                "on-secondary-fixed": "#201b12",
+                "error": "#ba1a1a",
+                "tertiary": "#874a00",
+                "on-tertiary-fixed": "#2e1500",
+                "primary-container": "#5a67d8",
+                "on-tertiary-container": "#fff6f2",
+                "surface-bright": "#f9f9f6",
+                "on-secondary-container": "#6b6358",
+                "on-secondary-fixed-variant": "#4c463b",
+                "inverse-on-surface": "#f1f1ee",
+                "secondary": "#655d52",
+                "inverse-surface": "#2f312f",
+                "on-error": "#ffffff",
+                "on-secondary": "#ffffff",
+                "on-background": "#1a1c1b",
+                "primary": "#404dbe",
+                "outline-variant": "#c6c5d5",
+                "on-tertiary-fixed-variant": "#6c3a00",
+                "on-surface-variant": "#454653",
+                "secondary-fixed-dim": "#cfc5b7",
+                "on-tertiary": "#ffffff",
+                "surface-dim": "#dadad7",
+                "surface-container": "#eeeeeb",
+                "secondary-fixed": "#ece1d2",
+                "background": "#f9f9f6",
+                "inverse-primary": "#bdc2ff",
+                "secondary-container": "#ece1d2",
+                "surface-tint": "#4552c3",
+                "error-container": "#ffdad6",
+                "tertiary-fixed": "#ffdcc1",
+                "tertiary-fixed-dim": "#ffb778",
+                "on-primary-container": "#faf7ff",
+                "on-primary-fixed-variant": "#2b38aa"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "fontFamily": {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .ease-out-quint {
+            transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased overflow-hidden">
+<!-- Top Navigation Bar (Shared Component) -->
+<header class="fixed top-0 w-full z-50 bg-stone-50/80 backdrop-blur-xl shadow-sm shadow-stone-200/50 flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto left-1/2 -translate-x-1/2">
+<div class="text-2xl font-bold tracking-tighter text-indigo-800 font-headline">BookLoom</div>
+<nav class="hidden md:flex items-center gap-8 font-headline tracking-tight">
+<a class="text-stone-600 hover:text-indigo-600 transition-opacity duration-300" href="#">Shop</a>
+<a class="text-stone-600 hover:text-indigo-600 transition-opacity duration-300" href="#">Categories</a>
+<a class="text-stone-600 hover:text-indigo-600 transition-opacity duration-300" href="#">Editorial</a>
+<a class="text-stone-600 hover:text-indigo-600 transition-opacity duration-300" href="#">New Arrivals</a>
+</nav>
+<div class="flex items-center gap-4 text-indigo-700">
+<button class="hover:opacity-80 transition-opacity duration-300"><span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span></button>
+<button class="hover:opacity-80 transition-opacity duration-300"><span class="material-symbols-outlined" data-icon="person">person</span></button>
+</div>
+</header>
+<!-- Side Navigation (Shared Component - Contextual Active State) -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-stone-50 flex flex-col p-6 font-headline font-medium z-40 hidden lg:flex">
+<div class="mt-20 mb-10 flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full overflow-hidden mb-3 bg-surface-container shadow-sm">
+<img class="w-full h-full object-cover" data-alt="close-up portrait of a thoughtful man in a library with soft natural window lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATcRK5uj_T-x7BwI20B7XpRw-7vjAfS2JE5LFO-m1j9HZWus_E0iJt1KPJK01s-sd39gaz7HbGInaIQzZs7OSCnu7h81ak9xzZkmVndlTxzLy9v9EyVyCIcNqwp0WJ7PBkpDCUPlGQwMVG97OPViktfWJp-2ALBgeHJaoR7jC1DMz9aSklTCfaV5AIECMlVuoN3GiTXU_DHnctwfGxQS0cKylU7Pd3mS0kSROxmY8Noc2rMGhscAeMl1R5wP1UxDjxFJxPjT6Vz4Kr"/>
+</div>
+<h2 class="text-xl font-black text-indigo-700">The Collector</h2>
+<p class="text-sm text-stone-500 font-normal">Gold Member</p>
+</div>
+<nav class="space-y-1 flex-grow">
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 hover:bg-stone-100 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span> Home
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 hover:bg-stone-100 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="book_2">book_2</span> My Library
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 hover:bg-stone-100 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span> Wishlist
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 hover:bg-stone-100 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span> Orders
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-500 hover:bg-stone-100 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span> Settings
+            </a>
+</nav>
+<button class="mt-auto bg-primary text-on-primary py-4 px-6 rounded-full font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary/20 scale-95 hover:scale-100 transition-all ease-out-quint">
+<span class="material-symbols-outlined" data-icon="bolt" data-weight="fill" style="font-variation-settings: 'FILL' 1;">bolt</span>
+            Talk to AI Assistant
+        </button>
+</aside>
+<!-- Main Canvas: AI Assistant Interface -->
+<main class="lg:ml-64 pt-24 min-h-screen flex flex-col">
+<!-- Conversation Thread -->
+<div class="flex-grow max-w-4xl mx-auto w-full px-8 flex flex-col gap-12 pb-48">
+<!-- AI Welcome Message (Editorial Approach) -->
+<div class="flex flex-col gap-4 mt-8">
+<div class="flex items-center gap-3 text-indigo-600">
+<span class="material-symbols-outlined text-2xl" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-headline font-bold text-sm tracking-widest uppercase">Assistant</span>
+</div>
+<h1 class="text-4xl md:text-5xl font-headline font-extrabold tracking-tight text-on-surface leading-tight">
+                    Welcome back, Collector.<br/>What shall we discover today?
+                </h1>
+<p class="text-on-surface-variant max-w-xl text-lg leading-relaxed">
+                    I've curated some thoughts based on your interest in <span class="text-indigo-600 font-semibold italic">Japanese architectural minimalism</span> and <span class="text-indigo-600 font-semibold italic">mid-century essays</span>.
+                </p>
+</div>
+<!-- User Message: Soft Bubble-less Design -->
+<div class="flex flex-col gap-2 items-end">
+<div class="flex items-center gap-2 text-stone-400 mb-1">
+<span class="font-headline font-bold text-[10px] tracking-widest uppercase">You</span>
+</div>
+<div class="bg-surface-container-low px-8 py-5 rounded-3xl rounded-tr-none text-on-surface text-lg border-none">
+                    I'm looking for a book that feels like a quiet rainy afternoon. Something meditative.
+                </div>
+</div>
+<!-- AI Response: Structured Content -->
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3 text-indigo-600">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-headline font-bold text-sm tracking-widest uppercase">Assistant</span>
+</div>
+<div class="space-y-6">
+<p class="text-lg text-on-surface leading-relaxed">
+                        For that specific atmosphere, I recommend exploring the works of <span class="font-bold">Sosuke Natsukawa</span>. There is a particular rhythm to the prose that matches the steady fall of rain.
+                    </p>
+<!-- Featured Book Card (Bento/Premium) -->
+<div class="bg-surface-container-lowest p-1 rounded-[2rem] shadow-sm hover:shadow-xl transition-all duration-500 ease-out-quint group">
+<div class="flex flex-col md:flex-row gap-8 p-6">
+<div class="w-full md:w-48 aspect-[2/3] rounded-2xl overflow-hidden bg-stone-200">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="a minimalist book cover with abstract blue and white organic shapes on a warm off-white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4hfuDd8wL0qDGPFijUETdRGD0cpkwMRH53h0nHtETOUl8TDQvLIaDxIVVJlYBCc69LfDqkqdlPsr6YHbYcw7v8Rt8M0U4vgTC7vQw5vJb19GpdOFK5l0LIs5nKXHCvuVQAAkq8xKLCJDWnXCY7DZF1ALjp-cDYd8qX_FxMQTaH-nAnitFRTbRacRIM0aItttxqwiDc7vR5hhKQJakwc1cSI6Zczb3jczmo1p_bnhJOplqavr11-WsjGQdDtaNJj3Pp3HokCE13ERu"/>
+</div>
+<div class="flex-grow flex flex-col justify-center py-4">
+<span class="text-xs font-bold text-indigo-600 uppercase tracking-widest mb-2">Editorial Recommendation</span>
+<h3 class="text-3xl font-headline font-bold text-on-surface mb-2">The Cat Who Saved Books</h3>
+<p class="text-on-surface-variant mb-6 italic">A celebration of the power of literature, set in a labyrinthine second-hand bookshop.</p>
+<div class="flex gap-3">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-semibold hover:bg-primary-container transition-colors shadow-lg shadow-primary/20">Add to Library</button>
+<button class="bg-secondary-container text-on-secondary-container px-6 py-3 rounded-full font-semibold hover:opacity-80 transition-opacity">Read Sample</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Input Area & Suggestions -->
+<section class="fixed bottom-0 left-0 lg:left-64 right-0 p-8 z-50 pointer-events-none">
+<div class="max-w-4xl mx-auto w-full flex flex-col gap-6 pointer-events-auto">
+<!-- Helpful Suggestions -->
+<div class="flex flex-wrap gap-2 justify-center">
+<button class="bg-surface-container-lowest/80 backdrop-blur-md px-5 py-2 rounded-full text-sm font-medium text-stone-600 hover:text-indigo-600 hover:bg-white transition-all shadow-sm border border-outline-variant/10">
+                        "More like this"
+                    </button>
+<button class="bg-surface-container-lowest/80 backdrop-blur-md px-5 py-2 rounded-full text-sm font-medium text-stone-600 hover:text-indigo-600 hover:bg-white transition-all shadow-sm border border-outline-variant/10">
+                        "Who is the illustrator?"
+                    </button>
+<button class="bg-surface-container-lowest/80 backdrop-blur-md px-5 py-2 rounded-full text-sm font-medium text-stone-600 hover:text-indigo-600 hover:bg-white transition-all shadow-sm border border-outline-variant/10">
+                        "Find it in local shops"
+                    </button>
+</div>
+<!-- Input Field -->
+<div class="bg-white/90 backdrop-blur-2xl rounded-[2.5rem] p-2 shadow-2xl shadow-stone-300/40 flex items-center gap-2 group">
+<div class="pl-6 text-stone-400">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+</div>
+<input class="flex-grow bg-transparent border-none focus:ring-0 text-on-surface py-4 placeholder:text-stone-400 font-medium" placeholder="Ask BookLoom anything..." type="text"/>
+<button class="w-12 h-12 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 hover:bg-indigo-600 hover:text-white transition-all ease-out-quint">
+<span class="material-symbols-outlined" data-icon="arrow_upward">arrow_upward</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Suppression Logic: Not rendering full footer for chat focus, but keeping minimal branding -->
+<div class="fixed bottom-4 left-8 lg:left-72 z-50 pointer-events-none opacity-40 hidden md:block">
+<p class="text-[10px] font-label uppercase tracking-[0.2em] text-stone-500">
+            © 2024 BookLoom Atelier. Curated with intention.
+        </p>
+</div>
+</body></html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BookLoom - Your Curated Collection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-high": "#e8e8e5",
+                      "on-primary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-fixed-dim": "#bdc2ff",
+                      "on-surface": "#1a1c1b",
+                      "primary-fixed": "#dfe0ff",
+                      "on-primary-fixed": "#000965",
+                      "tertiary-container": "#aa5f00",
+                      "surface-variant": "#e2e3e0",
+                      "on-error-container": "#93000a",
+                      "surface": "#f9f9f6",
+                      "outline": "#767684",
+                      "surface-container-low": "#f4f4f1",
+                      "surface-container-highest": "#e2e3e0",
+                      "on-secondary-fixed": "#201b12",
+                      "error": "#ba1a1a",
+                      "tertiary": "#874a00",
+                      "on-tertiary-fixed": "#2e1500",
+                      "primary-container": "#5a67d8",
+                      "on-tertiary-container": "#fff6f2",
+                      "surface-bright": "#f9f9f6",
+                      "on-secondary-container": "#6b6358",
+                      "on-secondary-fixed-variant": "#4c463b",
+                      "inverse-on-surface": "#f1f1ee",
+                      "secondary": "#655d52",
+                      "inverse-surface": "#2f312f",
+                      "on-error": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "on-background": "#1a1c1b",
+                      "primary": "#404dbe",
+                      "outline-variant": "#c6c5d5",
+                      "on-tertiary-fixed-variant": "#6c3a00",
+                      "on-surface-variant": "#454653",
+                      "secondary-fixed-dim": "#cfc5b7",
+                      "on-tertiary": "#ffffff",
+                      "surface-dim": "#dadad7",
+                      "surface-container": "#eeeeeb",
+                      "secondary-fixed": "#ece1d2",
+                      "background": "#f9f9f6",
+                      "inverse-primary": "#bdc2ff",
+                      "secondary-container": "#ece1d2",
+                      "surface-tint": "#4552c3",
+                      "error-container": "#ffdad6",
+                      "tertiary-fixed": "#ffdcc1",
+                      "tertiary-fixed-dim": "#ffb778",
+                      "on-primary-container": "#faf7ff",
+                      "on-primary-fixed-variant": "#2b38aa"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ease-out-quint {
+            transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed-dim">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-sm shadow-stone-200/50 dark:shadow-none">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto font-headline tracking-tight">
+<div class="text-2xl font-bold tracking-tighter text-indigo-800 dark:text-indigo-300">BookLoom</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-stone-600 dark:text-stone-400 hover:text-indigo-600 transition-opacity duration-300" href="#">Shop</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-indigo-600 transition-opacity duration-300" href="#">Categories</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-indigo-600 transition-opacity duration-300" href="#">Editorial</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-indigo-600 transition-opacity duration-300" href="#">New Arrivals</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="hover:opacity-80 transition-opacity duration-300 scale-95 duration-200 ease-out-quint text-indigo-700 dark:text-indigo-400">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<button class="hover:opacity-80 transition-opacity duration-300 scale-95 duration-200 ease-out-quint text-indigo-700 dark:text-indigo-400">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-8 max-w-screen-2xl mx-auto">
+<div class="mb-12">
+<h1 class="font-headline text-4xl font-extrabold tracking-tighter text-on-surface mb-2">Your Collection</h1>
+<p class="text-on-surface-variant font-medium">3 items awaiting their journey to your library.</p>
+</div>
+<div class="flex flex-col lg:flex-row gap-16">
+<!-- Left: List of Items -->
+<div class="flex-grow space-y-12">
+<!-- Item 1 -->
+<div class="flex flex-col sm:flex-row gap-8 group">
+<div class="w-full sm:w-48 aspect-[3/4] overflow-hidden rounded-xl bg-surface-container shadow-sm">
+<img alt="The Art of Silence" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out-quint" data-alt="Modern minimalist book cover titled The Art of Silence against a soft cream background with elegant typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbaF1IYgYhEz5DLkHIXlKN2bBo0N3nzqQ-dmvCl8XmTeuWHl1-umWBu2i7egrYbHZFVGRfrD7wVWSILOOMGqpw79MqkcVPzOkzCgIXmY5x6AXo12z4PikaWUq9UWiRRWC9ifmMK3c_nFTshbY30EwABpo8mfgkRtGfFXoaLjy1I-3tLIxtoq9pKeJNXCZ8I_VXiZgIxlpw1M-Bj3CnszI4biwisvQ7OrclQdRKFCEJRH7G6VOMLgilMZMkupzl-abrW5UYIM1CxvjH"/>
+</div>
+<div class="flex flex-col justify-between py-2 flex-grow">
+<div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-xl font-bold text-on-surface tracking-tight mb-1">The Art of Silence</h3>
+<p class="text-on-surface-variant text-sm font-medium">Julianna V. Sterling</p>
+</div>
+<span class="font-headline font-bold text-xl text-primary">$32.00</span>
+</div>
+<div class="mt-4 flex items-center gap-4">
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Hardcover</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant">In Stock</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-8">
+<div class="flex items-center bg-surface-container-highest rounded-full px-4 py-1.5 gap-6">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="remove">remove</span>
+</button>
+<span class="font-headline font-bold w-4 text-center">1</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+</button>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors flex items-center gap-2 text-sm font-medium">
+<span class="material-symbols-outlined text-base" data-icon="delete">delete</span>
+                                Remove
+                            </button>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex flex-col sm:flex-row gap-8 group">
+<div class="w-full sm:w-48 aspect-[3/4] overflow-hidden rounded-xl bg-surface-container shadow-sm">
+<img alt="Echoes of Tomorrow" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out-quint" data-alt="Classic leather bound novel resting on a dark oak desk with soft atmospheric library lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwFf6gYBnCTN8cuAV0hM_2ExTJ_FIApOfF4uFAR8jsfr1JAR41Ac2VanRxGTorWD0atjJ4Ts4t5578X-bjv9czQ99vuDEUVY0bNH8OKQTa9Nl-rzMQU-RuQvZDIBiQ5IJOsmgKQOSMUuRSLX3BdMW8vFdbQ90Qtd0BExt52IqZT_5RKIbcmwwzE2aQKIM1AIgrYGq8KvtTYfzppNpShtgMpmB-X0xtiZot_AtuDreWjcg45kFTtaMcJ9FgqbSF9itcUp9XYdAokZLr"/>
+</div>
+<div class="flex flex-col justify-between py-2 flex-grow">
+<div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-xl font-bold text-on-surface tracking-tight mb-1">Echoes of Tomorrow</h3>
+<p class="text-on-surface-variant text-sm font-medium">Dr. Elias Thorne</p>
+</div>
+<span class="font-headline font-bold text-xl text-primary">$28.50</span>
+</div>
+<div class="mt-4 flex items-center gap-4">
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Signature Edition</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Pre-Order</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-8">
+<div class="flex items-center bg-surface-container-highest rounded-full px-4 py-1.5 gap-6">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="remove">remove</span>
+</button>
+<span class="font-headline font-bold w-4 text-center">1</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+</button>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors flex items-center gap-2 text-sm font-medium">
+<span class="material-symbols-outlined text-base" data-icon="delete">delete</span>
+                                Remove
+                            </button>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex flex-col sm:flex-row gap-8 group">
+<div class="w-full sm:w-48 aspect-[3/4] overflow-hidden rounded-xl bg-surface-container shadow-sm">
+<img alt="Botanical Muse" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out-quint" data-alt="A thick botanical encyclopedia showing detailed hand-drawn sketches of rare flowers and plants" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnFga8M6FxAwuz468JAF2XjSHIssZiB05YaKK7Zssny-LjtkcvxHoG_atjLQoXsZzOr_RsgtWZiOL0s7feU_zKxg3ODkwZEGTh_VuD00hnjL5ZIgewjpxuD08UqWIjCzzn_krUH78meWfFRaozFslAA2Z-EYxt3GPh83EDxOb7BS75BjcCRin8ujojzA58xQyNR-DbsO4ChsVcl1g4guBpHRv-hCFlshB0VElCFoqhAgMzYkgDB3CSywPxLqZdQxD21opYtensBqG1"/>
+</div>
+<div class="flex flex-col justify-between py-2 flex-grow">
+<div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-xl font-bold text-on-surface tracking-tight mb-1">Botanical Muse</h3>
+<p class="text-on-surface-variant text-sm font-medium">Avery Lane</p>
+</div>
+<span class="font-headline font-bold text-xl text-primary">$45.00</span>
+</div>
+<div class="mt-4 flex items-center gap-4">
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Coffee Table Book</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant">In Stock</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-8">
+<div class="flex items-center bg-surface-container-highest rounded-full px-4 py-1.5 gap-6">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="remove">remove</span>
+</button>
+<span class="font-headline font-bold w-4 text-center">1</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+</button>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors flex items-center gap-2 text-sm font-medium">
+<span class="material-symbols-outlined text-base" data-icon="delete">delete</span>
+                                Remove
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Order Summary Card -->
+<aside class="w-full lg:w-96">
+<div class="bg-surface-container-lowest rounded-3xl p-8 sticky top-32 shadow-[0_20px_40px_rgba(26,28,27,0.05)] border border-outline-variant/10">
+<h2 class="font-headline text-2xl font-bold tracking-tight mb-8">Summary</h2>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant font-medium">Subtotal</span>
+<span class="font-headline font-bold text-on-surface">$105.50</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant font-medium">Shipping</span>
+<span class="font-headline font-bold text-on-surface">$12.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant font-medium">Tax</span>
+<span class="font-headline font-bold text-on-surface">$8.44</span>
+</div>
+</div>
+<div class="pt-6 border-t border-surface-container-high mb-10">
+<div class="flex justify-between items-end">
+<span class="font-headline font-bold text-xl">Total</span>
+<div class="text-right">
+<span class="block text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-1">Estimated Total</span>
+<span class="font-headline font-extrabold text-3xl text-primary">$125.94</span>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<button class="w-full py-5 bg-primary text-on-primary font-headline font-bold rounded-full hover:bg-primary-container transition-all scale-100 active:scale-[0.98] ease-out-quint flex justify-center items-center gap-2">
+                            Checkout
+                            <span class="material-symbols-outlined text-xl" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="w-full py-4 bg-secondary-container text-on-secondary-container font-headline font-bold rounded-full hover:opacity-90 transition-all ease-out-quint">
+                            Continue Shopping
+                        </button>
+</div>
+<div class="mt-8 flex items-center justify-center gap-3">
+<span class="material-symbols-outlined text-outline-variant" data-icon="lock" style="font-size: 16px;">lock</span>
+<p class="text-[11px] font-label uppercase tracking-widest text-outline">Encrypted &amp; Secure Payment</p>
+</div>
+</div>
+</aside>
+</div>
+<!-- Recommendations Section (Breaking the grid) -->
+<section class="mt-32 pt-24 border-t border-surface-container-high">
+<h2 class="font-headline text-3xl font-bold tracking-tight mb-12">May we suggest?</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="group cursor-pointer">
+<div class="aspect-[2/3] rounded-2xl overflow-hidden mb-4 bg-surface-container-low">
+<img alt="Archive Volumes" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out-quint" data-alt="Macro photography of old book pages with beautiful yellowing edges and fine texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCTXDD_Dsvz4GWYMr0BJ1Jomhp8lvX9_ETTp6nqL8RX74v5tnN5rR8ZVfVZalDGCPq0t79TNc7F63AdfzK6xvgy5CC4EPefhlD62pxKn046cQmyTGCKafqeP89WhUo_ig7Y_TsaXlPpj2Rrf67SVXje3YiVT4ca-lq3vR5ytzQm2liflEFuuDailEyNqLtn0TLjWYXS6xIsx8PLqLUm38c0Fz7zArdAKxPiBBlAlI0dYRKPIzhGuHGAuu0IU5rx4_bNbvPM1nBM1Fs"/>
+</div>
+<h4 class="font-headline font-bold text-on-surface">Archive Volumes</h4>
+<p class="text-sm text-on-surface-variant">$19.00</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[2/3] rounded-2xl overflow-hidden mb-4 bg-surface-container-low">
+<img alt="The Minimalist Mind" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out-quint" data-alt="Top down view of several stack of books on a wooden floor with morning light streaming in" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBl8CwZEPxttzjzZmJ-rIBFca--6LUFEwX1AYQCvBjfKa2b563pS37XCNJe1nbtH4mUa5DhXAxWkvj3TcAlY5C5dqLJswLrZtU6gjbBGq4DKEuFGPX6IY9Yeib3-ZgaEkxTV7k-WkFlTAnlDbZrU2YlGvZ9W7xOMY_1kYOKUj_qKm6EuhIZW8aX8FfnibOY3GduS7Oq5eGyCxheFH2ICeo_9tD3VPyBF1SWLeTENYCNmOf8VoEf8l1mC-wTEmkysvlOaAC1ChCidry-"/>
+</div>
+<h4 class="font-headline font-bold text-on-surface">The Minimalist Mind</h4>
+<p class="text-sm text-on-surface-variant">$24.00</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[2/3] rounded-2xl overflow-hidden mb-4 bg-surface-container-low">
+<img alt="Velvet Midnight" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out-quint" data-alt="Atmospheric photo of an open book on a velvet cushion in a dimly lit Victorian style room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxuFyRGuHW5YenzvtmtcdpqWdVSfa5AWuHIJGCP6YnNGNhI7dXE-YhHgiuAQTtHl8VS3hYiq_fu34ujykIGMVNMreECFyCL_r8fMDPhv6P0d1bTq1sjzjlq6CzmtZkaMELa_WsZFVQdWZE6qGMjgNLvgMd8p5ZEcW80GPvRp7xF7rN0XEKZKi-zTp5_s65aQa6MX5aZRifS7x9FPm1qslYs8PZetkIu7h8N6SkXThN8_VwG3944_-8L7Q-Oam6aH-K3bmcMG-Yn2F-"/>
+</div>
+<h4 class="font-headline font-bold text-on-surface">Velvet Midnight</h4>
+<p class="text-sm text-on-surface-variant">$38.00</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[2/3] rounded-2xl overflow-hidden mb-4 bg-surface-container-low">
+<img alt="Design Ethics" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out-quint" data-alt="Close-up of a high-end designer book with gold foil lettering and dark navy cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIIoQQAmZ8FGLRW-5QG4cVa42ozDFbZ2LjtDALhOcQJ1aGNHw1JOOHE9sfHaARV4btjWzgTWSCWzsmz3dETxNge_GdAwXx-CSzGuoqphidU4yIeXrU4hYqXIg2Jsa30PBs7JjkPodDLISLrgp6JzYCgzvnTVKPpeYHu4yBdkDnXC87gPDNqczzlCpdruVgZdFVOJ1aymEI7LCSn--dJVJvN7GN3XBB1ROUO48sQMpEhopBKz3a1UXbxt4oeXjWvhGSUELJjV96pJu2"/>
+</div>
+<h4 class="font-headline font-bold text-on-surface">Design Ethics</h4>
+<p class="text-sm text-on-surface-variant">$52.00</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-3xl bg-stone-100 dark:bg-stone-900 mt-24">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full gap-8 max-w-screen-2xl mx-auto">
+<div class="text-lg font-bold text-stone-800 dark:text-stone-200 font-headline">BookLoom Atelier</div>
+<div class="flex flex-wrap justify-center gap-8 text-stone-500 dark:text-stone-400 font-inter text-sm uppercase tracking-widest">
+<a class="hover:text-indigo-500 transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-indigo-500 transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-indigo-500 transition-colors" href="#">Shipping &amp; Returns</a>
+<a class="hover:text-indigo-500 transition-colors" href="#">Contact Us</a>
+</div>
+<div class="text-stone-500 dark:text-stone-400 font-inter text-xs uppercase tracking-widest">
+                © 2024 BookLoom Atelier. Curated with intention.
+            </div>
+</div>
+</footer>
+</body></html>
